@@ -46,6 +46,7 @@ function alta_articulo()
 	$this->unidades = $this->input->post('unidades');
 	$this->precio = $this->input->post('precio');
 	$this->stock = $this->input->post('stock');
+	$this->url = $this->input->post('url');
 	$this->desc = $this->input->post('desc');
 	$this->subcategoria = $this->input->post('subcategoria');
 	$this->db->insert('articulo', $this);
@@ -69,6 +70,7 @@ function actualiza_articulo()
 			   'unidades' => $this->input->post('unidades'),
 			   'precio' => $this->input->post('precio'),
 			   'stock' => $this->input->post('stock'),
+			   'url' => $this->input->post('url'),
                'desc' => $this->input->post('desc'),
 			   'subcategoria' => $this->input->post('subcategoria')
             );

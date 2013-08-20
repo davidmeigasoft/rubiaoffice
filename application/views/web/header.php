@@ -85,7 +85,7 @@
         	
         	<ul id="tiny">
                     
-                        <li><a href="<?php echo base_url().'inicio/home'; ?>">Home</a>
+                        <li><a href="<?php echo base_url().'inicio/home'; ?>">Empresa</a>
                         </li>  
             
                         <?php foreach($categoria as $cat): ?>

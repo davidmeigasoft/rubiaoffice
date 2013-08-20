@@ -14,15 +14,11 @@
 							<li data-transition="fade" data-slotamount="10" data-thumb="images/spacer.gif">
 
 								<img src="<?php echo base_url().'assets-web/'; ?>images/spacer.gif" alt="" class="slider1_bg1" />
-                                
-                                <div class="caption lfr" data-x="500" data-y="90" data-speed="900" data-start="400" data-easing="easeOutBack"><img src="<?php echo base_url().'assets-web/'; ?>images/sliders/revolution/slide3.png" alt="" /></div>
-								<div class="caption lft big_white"  data-x="20" data-y="158" data-speed="900" data-start="900" data-easing="easeOutExpo">Bienvenido</div>
-								<div class="caption lft big_orange"  data-x="20" data-y="204" data-speed="900" data-start="1300" data-easing="easeOutExpo">a Galioffice</div>
-								<div class="caption lfb medium_grey"  data-x="20" data-y="262" data-speed="900" data-start="1800" data-easing="easeOutExpo">Material de oficina<br />
+								<div class="caption lft big_white"  data-x="200" data-y="158" data-speed="900" data-start="900" data-easing="easeOutExpo">Bienvenido</div>
+								<div class="caption lft big_orange"  data-x="200" data-y="204" data-speed="900" data-start="1300" data-easing="easeOutExpo">a Galioffice</div>
+								<div class="caption lfb medium_grey"  data-x="540" data-y="160" data-speed="900" data-start="1800" data-easing="easeOutExpo">Material de oficina<br />
 Servicio personalizado<br />
 Grandes ofertas</div>
-                                
-								<div class="caption lfb small_text"  data-x="20" data-y="474" data-speed="900" data-start="3100" data-easing="easeOutExpo"><a href="#" class="get_button">Ver productos</a></div>
                                 
                                 </li>
 
@@ -77,34 +73,6 @@ Seriedad, facilidad de pago, rápida distribucción del material, hacen de OFF M
 
 
 <div class="clearfix divider_line01"></div>
-
-
-<div class="container">
-	
-    <div class="one_fourth">
-    	<h2>Productos relacionados</h2>
-        <p>Los mejores complementos para su compra.</p>
-        <div class="clearfix mar_top2"></div>
-    </div>
     
-    <div class="three_fourth last">
-    <!-- 228x220 -->
-    	<ul id="mycarousel" class="jcarousel-skin-tango">
-        
-        <?php foreach($categoria as $row): ?>
-            <li> 
-           
-            	<b></b><img src="<?php echo base_url().'uploads/categoria/'.$row->img; ?>" alt="" />
-                <strong><?php echo $row->nombre; ?></strong>
-            </li>
-            
-        <?php endforeach; ?>
-           
-          </ul>
-    
-    </div>
-    
-</div><!-- end recent projects -->
-
 
 <div class="clearfix mar_top9"></div>

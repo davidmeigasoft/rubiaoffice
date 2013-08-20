@@ -37,7 +37,7 @@
     
     <div class="sidebar_widget">
     
-    	<div class="sidebar_title"><h3>Articulos recientes</h3></div>
+    	
         
 			<ul class="recent_posts_list">
         
@@ -121,6 +121,18 @@
               <!-- end section -->
  
               
+      <form action="demo_form.asp">
+        <input type="button" value="prueba" onClick="prueba();">
+      </form>
+     
+    <script type="text/javascript">
+	
+	function prueba()
+		{
+		alert("funciona");
+		}
+		
+	</script>
           
     <div id="itemContainer"> 
        

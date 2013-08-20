@@ -95,15 +95,19 @@
 								echo '<span><strong>Unidades en almacén</strong><i>'.$art->stock.'</i></span>';
 							endif;?>
                             
+                            <?php if($art->stock != ''): 
+								echo '<span><i><a href="'.$art->url.'">Más información</a></i></span>';
+							endif;?>
+                            
                     	<?php endif; ?>
                     <?php endforeach; ?>
                     
-     			 <br /><br /><br /><br /><br /><br /><br />
-                <h3 style="margin-top: 30px;">Solicitar información</h3>
+     			  </div>
+                
                 
                 
 					<form name="form" method="post" class="form-horizontal" action="<?php echo base_url().'inicio/validar_formulario_articulo'; ?>">  
-					
+					<h3 style="margin-top: 30px;">Solicitar información</h3>
 						<fieldset>
 						
 												
@@ -142,7 +146,7 @@
 						
 						</form> 
                 
-                </div>
+               
             </div>
           </div>    
           </div>

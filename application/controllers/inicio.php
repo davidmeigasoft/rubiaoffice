@@ -227,7 +227,7 @@ public function validar_formulario_articulo(){
 	if ($this->form_validation->run() == FALSE):// hay algun error en la validacion
 		
 			$this->load->view('web/header', $data);
-            $this->load->view('web/articulo', $data);
+            $this->load->view('web/home');
             $this->load->view('web/footer');
 	else:
 		
@@ -249,12 +249,12 @@ public function validar_formulario_articulo(){
 		if($this->email->send()):
 			$data['msg'] = "Consulta enviada.";
 			$this->load->view('web/header', $data);
-       	 	$this->load->view('web/articulo',$data);
+       	 	$this->load->view('web/home');
         	$this->load->view('web/footer');
 		else:
 			$data['msg'] = "Se ha producido un error al enviar la consulta.";
 			$this->load->view('web/header', $data);
-       	 	$this->load->view('web/articulo', $data);
+       	 	$this->load->view('web/home');
         	$this->load->view('web/footer', $data);
 		endif;
 		

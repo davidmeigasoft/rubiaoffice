@@ -147,6 +147,14 @@
 									<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Campo obligatorio"><i></i></span>
 								</div>
 							</div>
+                            
+                            <div class="control-group">
+								<label class="control-label">URL</label>
+								<div class="controls">
+									<input type="text" value="<?php echo set_value('url'); ?>" class="span10" name="url" />
+									<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Campo obligatorio"><i></i></span>
+								</div>
+							</div>
 
 
 </div><!--end span 6-->
