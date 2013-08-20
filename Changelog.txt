@@ -1,0 +1,37 @@
+Revisar siempre ModRewrite apache httpd.conf
+Los formulario metodo post
+El checkbox cuando se activa manda por post el value 'on'
+cuando no se activa simplemente usa 0
+
+Controllers:
+
+ -admin_cliente
+	-cliente
+	-cliente_id
+	-alta_cliente
+	-actualiza_cliente
+	-borra_cliente
+
+
+
+
+Models:
+
+ -cliente_model
+ 
+ 
+ Consulta archivos por cliente
+ $sql = "SELECT * FROM `archivo_cliente`\n"
+    . "inner join archivo on (archivo.archivo_id = archivo_cliente.archivo_id)\n"
+    . "where archivo_cliente.cliente_id like 2 LIMIT 0, 30 ";
+	
+
+consulta fechas para blog
+
+$sql = "SELECT DISTINCT(DATE_FORMAT(blog.fecha_alta,\'%Y %m\')) FROM `blog`";
+
+Consulta tags en blog
+
+$sql = "select blog.* from blog\n"
+    . "inner join tag on tag.blog_id = blog.blog_id\n"
+    . "where tag.nombre like \'casa\'";
