@@ -198,13 +198,28 @@ function ultimos_articulos()
 	
 function articulos_categoria($categoria_id)
 	{
-		$this->db->select('categoria_id, subcategoria_id, articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name');
+		$this->db->select('categoria_id, subcategoria_id, articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name, articulo.precio');
 		$this->db->from('articulo');
 		$this->db->join('imagen_articulo', 'articulo.articulo_id = imagen_articulo.articulo', 'left');
 		$this->db->join('subcategoria', 'articulo.subcategoria = subcategoria.subcategoria_id', 'left');
 		$this->db->join('categoria', 'categoria.categoria_id = subcategoria.categoria', 'left');
 		$this->db->group_by('articulo_id');
 		$this->db->where('categoria_id', $categoria_id);
+		$query = $this->db->get();
+		
+		return $query->result();
+	}
+	
+function articulos_categoria_orden($categoria_id, $orden)
+	{
+		$this->db->select('categoria_id, subcategoria_id, articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name, articulo.precio');
+		$this->db->from('articulo');
+		$this->db->join('imagen_articulo', 'articulo.articulo_id = imagen_articulo.articulo', 'left');
+		$this->db->join('subcategoria', 'articulo.subcategoria = subcategoria.subcategoria_id', 'left');
+		$this->db->join('categoria', 'categoria.categoria_id = subcategoria.categoria', 'left');
+		$this->db->group_by('articulo_id');
+		$this->db->where('categoria_id', $categoria_id);
+		$this->db->order_by($orden);
 		$query = $this->db->get();
 		
 		return $query->result();

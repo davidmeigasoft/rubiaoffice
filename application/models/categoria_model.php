@@ -7,9 +7,9 @@ function __construct()
 	$this->load->helper(array('form', 'url'));
 }
 
-function categoria()//devuelve todas las categorías
+function categoria($ordenacion = 'nombre')//devuelve todas las categorías
 {
-	$this->db->order_by('nombre');
+	$this->db->order_by($ordenacion);
 	$query = $this->db->get('categoria');
 	return $query->result();
 }
@@ -72,5 +72,6 @@ function datos_categoria($id_categoria)
 	}
 
 }//model
+
 
 ?>

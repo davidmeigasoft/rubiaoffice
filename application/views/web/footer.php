@@ -15,20 +15,22 @@
                 
                 <?php foreach($ultimos_articulos as $row): ?>
                 
-                <b></b><li class="ultimos_productos">
+                <li class="ultimos_productos">
                     
                 	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
                     
                     
-                     <?php if($row->file_name != ""): ?>
+                    <?php if($row->file_name != ""): ?>
                     <img src="<?php echo base_url();?>/image.php?width=100px&amp;cropratio=3:2&amp;image=<?php echo base_url().'uploads/articulo/mid/'; echo $row->file_name;?>" alt="" />
+                    
                     <?php else: ?>
                     <img src="<?php echo base_url();?>/image.php?width=100px&amp;cropratio=3:2&amp;image=<?php echo base_url().'uploads/articulo/noimage_min.png'; ?>"/>
                     
-                    </a>
-                    <?php endif; ?>
                     
-                    <span class="title"><a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"><?php echo $row->articulo_nombre; ?></a></span>
+                    <?php endif; ?>
+                    </a>
+                    
+                    <span class="title"><a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></span>
                     
                 </li>
                 

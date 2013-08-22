@@ -46,7 +46,7 @@ class Inicio extends CI_Controller {
 		
 		
 		
-	public function categoria($categoria_id){
+	public function categoria($categoria_id, $nombre){
 			//consulta a la base de datos que te devuleva la categoria a la que pertenece el $subcategoria_id
 			
 			$data['categoria'] = $this->categoria_model->categoria();
@@ -61,6 +61,36 @@ class Inicio extends CI_Controller {
 			$this->load->view('web/footer', $data);
 			
 		}//End categoría
+	
+	
+	
+	public function ordena_categoria($categoria_id, $nombre, $ordenacion) //muestra articulos ordenados en categoría
+		{
+			$data['categoria'] = $this->categoria_model->categoria();
+			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
+			$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
+			$data['listado_articulos_categoria'] = $this->articulo_model->articulos_categoria_orden($categoria_id, $ordenacion);
+			$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
+			$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
+			
+			$this->load->view('web/header', $data);
+			$this->load->view('web/categoria',$data);
+			$this->load->view('web/footer', $data);
+		}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 		
 	public function listar_categoria($categoria_id, $subcategoria_id, $nombre_subcategoria){

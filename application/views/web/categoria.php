@@ -120,7 +120,21 @@
               </div>-->
               <!-- end section -->
  
-    <div id="opciones_visualizacion" class="three_foourth" >  
+    <div id="opciones_visualizacion" class="three_foourth" >
+    	<span>Ordenar por</span>
+        <select name="ordenar">
+        	<option> Orden alfabético A-Z
+            <option> Orden alfabético Z-A
+            <option> Más baratos
+            <option> Más caros
+            <option> Más recientes
+        </select>
+
+
+        <a href="<?php echo base_url().'inicio/ordena_categoria/12/mobiliario/precio'; ?>">asdf</a>
+        
+        
+        
         <div class="boton_vista_inactivo" id="cuadricula"><span>Mostrar en cuadrícula</span></div>    
         <div class="boton_vista_activo" id="lista"><span>Mostrar en lista</span></div>
     </div>
@@ -143,8 +157,10 @@
             <div class="post_info_content_small">
             <h3><a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></h3>
             
-            <div class="clearfix"></div>
+           
             
+            <div class="clearfix"></div>
+             <h5> <?php if($row->precio != ""): echo "Precio: ".ucfirst($row->precio).'€'; endif; ?></h5>
             <p><?php echo word_limiter($row->articulo_desc, 15); ?></p><br>
             <!--<a class="but_info" href="master.php">+ Info</a> &nbsp; <a class="but_pdf" href="#">Descarga PDF</a>-->
             

@@ -227,7 +227,7 @@ a:hover {
 }
 
 /*Enlaces articulos subfooter*/
-li a {
+.title a {
 	color: #999;
 	text-decoration: none;
 	text-align: center;
@@ -236,7 +236,7 @@ li a {
 	-moz-transition:all 200ms ease-in;
 }
 
-li a:hover {
+.title :hover {
 	text-decoration: none;
 	color: #444;
 }

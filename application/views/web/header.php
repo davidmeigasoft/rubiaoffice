@@ -78,8 +78,10 @@
     
     	<div class="top_section">
               
-            <div class="logo_innerpage"><a href="<?php echo base_url(); ?>" class="logo_innerpage"><h1>Gal<i>i</i>office <small>Mobiliario de oficina</small></h1></a></div><!-- end logo -->
-               
+            <div class="logo_innerpage"><a href="<?php echo base_url(); ?>" class="logo_innerpage"><h1>Gal<i>i</i>office</h1></a>
+             <small id="subtitulo">Mobiliario de oficina</small>   
+            </div><!-- end logo -->
+           
         <nav id="access" class="access" role="navigation">
         <div id="menu" class="menu">
         	
