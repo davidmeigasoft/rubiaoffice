@@ -43,21 +43,24 @@ class Inicio extends CI_Controller {
 			$this->load->view('web/footer', $data);
 		}//End home
 		
+		
+		
 	public function categoria($categoria_id){
 			//consulta a la base de datos que te devuleva la categoria a la que pertenece el $subcategoria_id
 			
 			$data['categoria'] = $this->categoria_model->categoria();
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
-
 			$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
 			$data['listado_articulos_categoria'] = $this->articulo_model->articulos_categoria($categoria_id);
 			$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
 			$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
 			
 			$this->load->view('web/header', $data);
-			$this->load->view('web/categoria', $data);
+			$this->load->view('web/categoria',$data);
 			$this->load->view('web/footer', $data);
-		}//End home
+			
+		}//End categoría
+	
 		
 	public function listar_categoria($categoria_id, $subcategoria_id, $nombre_subcategoria){
 			$data['categoria'] = $this->categoria_model->categoria();
@@ -77,7 +80,7 @@ class Inicio extends CI_Controller {
 			
 			
 			//paginación
-			/*$cantidad = $this->articulo_model->count_articulos_subcategoria($subcategoria_id);
+			$cantidad = $this->articulo_model->count_articulos_subcategoria($subcategoria_id);
 			$this->load->library('pagination');
 			$desde = ($this->uri->segment(6)) ? $this->uri->segment(6) : 0;
 			$this->load->library('pagination');
@@ -109,8 +112,9 @@ class Inicio extends CI_Controller {
 			$data['articulo_subcategoria'] = $this->subcategoria_model->articulos_subcategoria($subcategoria_id, $config['per_page'],$desde);
 
 			$this->pagination->initialize($config);
+			
 			$data['pagination'] =  $this->pagination->create_links(); 
-			*/
+			
 			$this->load->view('web/header', $data);
 			$this->load->view('web/subcategoria',$data);
 			$this->load->view('web/footer', $data);

@@ -91,18 +91,31 @@ function ultimos_articulos_subcategoria($subcategoria_id)
 	
 	return $query->result();
 
-    return $resultado->result();
+    //return $resultado->result();
 	}
 
-function count_articulos_subcategoria($id)
+function count_articulos_subcategoria($id) // cuenta artículos para paginación
 	{
 		$this->db->select('*');
 		$this->db->from('articulo');
 		$this->db->where('subcategoria', $id);
 		$query = $this->db->count_all_results();
+		
+		return $query;
+	}
+	
+function count_articulos_categoria($id) // cuenta artículos para paginación
+	{
+		$this->db->select('*');
+		$this->db->from('articulo');
+		$this->db->join('subcategoria', 'subcategoria.subcategoria_id = articulo.subcategoria');
+		$this->db->where('subcategoria.categoria', $id);
+		$query = $this->db->count_all_results();
 
 		return $query;
 	}
+	
+
 
 function datos_articulo($articulo_id)
 	{
@@ -136,7 +149,7 @@ function obtener_numero_imagenes_subcat($subcategoria_id)
 	}
 
 	
-function lista_articulos_sub($subcategoria_id)
+function lista_articulos_sub($subcategoria_id) 
 	{
 		$this->db->select('file_name, categoria_id, subcategoria_id, articulo.nombre as articulo_nombre, articulo_id, articulo.desc as articulo_desc');
 		$this->db->from('subcategoria');
@@ -192,8 +205,8 @@ function articulos_categoria($categoria_id)
 		$this->db->join('categoria', 'categoria.categoria_id = subcategoria.categoria', 'left');
 		$this->db->group_by('articulo_id');
 		$this->db->where('categoria_id', $categoria_id);
-		
 		$query = $this->db->get();
+		
 		return $query->result();
 	}
 	

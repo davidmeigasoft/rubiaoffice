@@ -289,6 +289,60 @@ Condiciones del servicio | Politica de privacidad
 	
 </script>
 
+
+<!-- Cambia visualización de artículos a  -->
+    <script type="text/javascript">
+
+		 $(document).ready(function(){
+			 $('#cuadricula').click(function(){
+				 $('#prueba').text('Mostrar en lista');
+				 $('.blog_post').addClass('cuadricula_post');
+				 //$('.image_frame.small').addClass('cuadricula_info_small');
+				 $('.post_info_content_small').addClass('cuadricula_info_small');
+				 //$('.blog_post').css({'width': '33%', 'height':'300px'});
+				 $('.blog_postcontent .image_frame.small').css({'width': '90%'});
+				 //$('.post_info_content_small').css({'width': '90%'});
+				 });
+				 
+
+			 
+			
+			 $('#lista').click(function(){
+
+				 $('.blog_post').removeClass('cuadricula_post');
+				 //$('.image_frame.small').addClass('cuadricula_info_small');
+				 $('.post_info_content_small').removeClass('cuadricula_info_small');
+				 //$('.blog_post').css({'width': '33%', 'height':'300px'});
+				 $('.blog_postcontent .image_frame.small').css({'width': '43%'});
+				 //$('.post_info_content_small').css({'width': '90%'});
+				 });
+				 
+
+			 });
+	</script>
+
+
+<!-- Paginación -->
+
+    <script>
+    
+        $(document).ready(function(){
+				//$("#opciones_visualizacion p").text(i);
+				
+				/* initiate plugin */
+				$("div.holder").jPages({
+					containerID: "itemContainer",
+					 perPage   : 3
+				});
+				
+			});
+		});
+        
+    </script>
+
+
+
+
 <!-- nivo-slider -->
 <script type="text/javascript">/*
 jQuery(window).load(function(){

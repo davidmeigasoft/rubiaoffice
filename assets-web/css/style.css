@@ -93,7 +93,7 @@
 
 /* columns */
 
-.one_half, .one_third, .one_fourth, .two_third, .three_fourth, .one_fifth {
+.one_half, .one_third, .one_fourth, .two_third, ._fourth, .one_fifth {
 	position: relative;
 	margin-right: 3%;
 	float: left;
@@ -285,6 +285,19 @@
 }
 
 .selectnav {display: none; width: 440px; margin-left: 20px;}
+
+
+
+
+/*------------------*/
+/*	OPCIONES VISUALIZACIÓN
+/*------------------------------------------------------*/
+
+#opciones_visualizacion{
+	background-color: #EEE; 
+	margin-bottom: 15px;
+	border-radius: 5px;
+	}
 
 
 
@@ -1961,16 +1974,20 @@ ul.post_meta_links_small {
 	margin-right: 20px;
 }
 
-/*
-.blog_post {
-	width: 50%;
+
+
+/*LISTADO EN CUADRÍCULA*/
+
+.cuadricula_post{
+	width: 33%;
+	height:300px;
 }
-.blog_postcontent .image_frame.small {
+.cuadricula_postcontent_small{
 	width: 90%;
 }
-.post_info_content_small {
+.cuadricula_info_small{
 	width: 90%;
-}*/
+}
 
 
 

@@ -162,8 +162,9 @@
 <div class="clearfix divider_line02"></div>
 
 </div>
-    <div class="container_holder"><div class="holder"></div>
+    <div class="container_holder"><div class="holder" style="text-align: center; float: right; height: 50px; width: 100%;"></div>
 </div>     
+
        
 <script type="text/javascript" src="<?php echo base_url().'assets-web/'?>js/navigation/jquery-1.8.0.js"></script>
 
@@ -176,7 +177,7 @@
             /* initiate plugin */
             $("div.holder").jPages({
                 containerID: "itemContainer",
-                 perPage   : 6
+                 perPage   : 3
             });
         });
         

@@ -120,19 +120,16 @@
               </div>-->
               <!-- end section -->
  
-              
-      <form action="demo_form.asp">
-        <input type="button" value="prueba" onClick="prueba();">
+    <div id="opciones_visualizacion" class="three_foourth" >  
+
+        <p style="width: 20px;"></p>
+            
+        <input type="button" value="Mostrar en lista" id="lista">
+        <input type="button" value="Mostrar en cuadrícula" id="cuadricula">
+
+        </select>
       </form>
-     
-    <script type="text/javascript">
-	
-	function prueba()
-		{
-		alert("funciona");
-		}
-		
-	</script>
+    </div>
           
     <div id="itemContainer"> 
        
@@ -175,8 +172,11 @@
 
 </div>
     <div class="container_holder"><div class="holder"></div>
-</div>     
+</div>       
        
+<?php /*?><script type="text/javascript" src="<?php echo base_url().'assets-web/'?>js/navigation/jquery-1.8.0.js"></script>
+<script type="text/javascript" src="<?php echo base_url().'assets-web/'?>js/navigation/jPages.js"></script><?php */?>
+  
 <script type="text/javascript" src="<?php echo base_url().'assets-web/'?>js/navigation/jquery-1.8.0.js"></script>
 
   <script type="text/javascript" src="<?php echo base_url().'assets-web/'?>js/navigation/jPages.js"></script>
@@ -193,6 +193,7 @@
         });
         
     </script>
+
 
     
 <style type="text/css">
