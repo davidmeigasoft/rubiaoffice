@@ -4,7 +4,15 @@
 
 	<div class="container">
 		<div class="leaft_title"><h1><?php// echo ucfirst(str_replace("%20", " ",$nombre_categoria));?></h1></div>
-        <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Home</a><i>/</i> Mobiliario</div>
+        <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Empresa</a><i>/</i> 
+        
+        <?php foreach($datos_categoria as $row): ?>
+        	<?php echo ucfirst($row->nombre);?>
+        <?php endforeach; ?>
+        
+        
+        
+        </div>
 	</div>
 </div><!-- end page title --> 
 

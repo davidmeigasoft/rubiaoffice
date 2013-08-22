@@ -17,7 +17,7 @@
         
         
         
-        <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Home</a> <i>/</i> <a href="<?php echo base_url(); ?>">				<?php foreach($datos_categoria as $cat):?>
+        <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Empresa</a> <i>/</i> <a href="<?php echo base_url(); ?>">				<?php foreach($datos_categoria as $cat):?>
         
         
 									<?php foreach($datos_subcategoria as $row): ?>
