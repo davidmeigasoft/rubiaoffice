@@ -12,7 +12,7 @@
 	<meta name="description" content="" />
     
     <!-- Favicon --> 
-	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="shortcut icon" href="<?php echo base_url().'assets-web/'; ?>images/favicon.ico">
     
     <!-- this styles only adds some repairs on idevices  -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,7 +25,7 @@
 	<![endif]-->
     
     <!-- Favicon -->
-  	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+  	<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url().'assets-web/'; ?>images/favicon.ico">
     
     <!-- ######### CSS STYLES ######### -->
 	
@@ -68,11 +68,12 @@
             
             <div id="site_menu">
                 <ul>
-                <li><a href="<?php echo base_url().'inicio/home'; ?>" class="active">Home</a></li>
-                <li><a href="<?php echo base_url().'inicio/mobiliario/'; ?>">Mobiliario</a></li>
-                <li><a href="<?php echo base_url().'inicio/audiovisual/'; ?>">Audiovisuales</a></li>
-                <li><a href="<?php echo base_url().'inicio/papelería/'; ?>">Papeleria</a></li>
-                <li><a href="<?php echo base_url().'inicio/informatica/'; ?>">Informática</a></li>
+                <li><a href="<?php echo base_url().'inicio/home'; ?>" class="active">Empresa</a></li>
+                
+				<?php foreach($categoria as $cat): ?>
+                <li><a href="<?php echo base_url().'inicio/categoria/'.$cat->categoria_id.'/'.$cat->nombre; ?>"><?php echo ucfirst($cat->nombre);?></a>
+                 <?php endforeach; ?>
+                 
                 <li><a href="<?php echo base_url().'inicio/contacto'; ?>">Contacto</a></li>
                 </ul>
             </div><!-- end menu -->
@@ -156,30 +157,23 @@
 					</div>
 				</div>
 				
-                
                 <div class="container_index">
-                
                     <div class = 'slideSelectors'>
-                    	
                         <div class="placed" style="width:400px">
                         
-                            <div class = 'item selected'></div>
-                            
-                            <div class = 'item two'></div>
-                            
-                            <div class = 'item three'></div>
-                            
-                            <div class = 'item four'></div>
-                            
-                            <div class = 'item five'></div>
-                            
-                            <div class = 'item six'></div>
+                        <?php foreach ($categoria as $row): ?>
                         
+                            <div class = 'item'>
+                            <a href="<?php  echo base_url().'inicio/categoria/'.$row->categoria_id.'/'.$row->nombre; ?>">
+                            <img src="image.php?width=92px&amp;cropratio=1:1&amp;image=<?php echo base_url().'uploads/categoria/'.$row->img; ?>" title="<?php echo ucfirst($row->nombre); ?>"/>
+                            </a>
+                            </div>
+                            
+						<?php endforeach; ?>
+
                         </div>
                     </div>
-                
                 </div>
-                
 			</div>
 		</div>
 </div><!-- end slider -->

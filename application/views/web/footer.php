@@ -21,9 +21,9 @@
                     
                     
                      <?php if($row->file_name != ""): ?>
-                    <img width="100" src="<?php echo base_url().'uploads/articulo/mid/'; echo $row->file_name;?>" alt="" />
+                    <img src="<?php echo base_url();?>/image.php?width=100px&amp;cropratio=3:2&amp;image=<?php echo base_url().'uploads/articulo/mid/'; echo $row->file_name;?>" alt="" />
                     <?php else: ?>
-                    <img width="100" src="<?php  echo base_url().'uploads/articulo/noimage_small.png'; ?>"  alt="" />
+                    <img src="<?php echo base_url();?>/image.php?width=100px&amp;cropratio=3:2&amp;image=<?php echo base_url().'uploads/articulo/noimage_min.png'; ?>"/>
                     
                     </a>
                     <?php endif; ?>
@@ -295,13 +295,12 @@ Condiciones del servicio | Politica de privacidad
 
 		 $(document).ready(function(){
 			 $('#cuadricula').click(function(){
-				 $('#prueba').text('Mostrar en lista');
 				 $('.blog_post').addClass('cuadricula_post');
-				 //$('.image_frame.small').addClass('cuadricula_info_small');
 				 $('.post_info_content_small').addClass('cuadricula_info_small');
-				 //$('.blog_post').css({'width': '33%', 'height':'300px'});
 				 $('.blog_postcontent .image_frame.small').css({'width': '90%'});
-				 //$('.post_info_content_small').css({'width': '90%'});
+				 
+				 $('#cuadricula').removeClass('boton_vista_inactivo').addClass('boton_vista_activo'); 
+				 $('#lista').removeClass('boton_vista_activo').addClass('boton_vista_inactivo'); 
 				 });
 				 
 
@@ -315,6 +314,8 @@ Condiciones del servicio | Politica de privacidad
 				 //$('.blog_post').css({'width': '33%', 'height':'300px'});
 				 $('.blog_postcontent .image_frame.small').css({'width': '43%'});
 				 //$('.post_info_content_small').css({'width': '90%'});
+				 $('#lista').removeClass('boton_vista_inactivo').addClass('boton_vista_activo'); 
+				 $('#cuadricula').removeClass('boton_vista_activo').addClass('boton_vista_inactivo'); 
 				 });
 				 
 

@@ -121,14 +121,8 @@
               <!-- end section -->
  
     <div id="opciones_visualizacion" class="three_foourth" >  
-
-        <p style="width: 20px;"></p>
-            
-        <input type="button" value="Mostrar en lista" id="lista">
-        <input type="button" value="Mostrar en cuadrícula" id="cuadricula">
-
-        </select>
-      </form>
+        <div class="boton_vista_inactivo" id="cuadricula"><span>Mostrar en cuadrícula</span></div>    
+        <div class="boton_vista_activo" id="lista"><span>Mostrar en lista</span></div>
     </div>
           
     <div id="itemContainer"> 
@@ -171,8 +165,10 @@
 <div class="clearfix divider_line02"></div>
 
 </div>
-    <div class="container_holder"><div class="holder"></div>
-</div>       
+<div class="container_holder">
+	<div class="holder" style="text-align: center; float: right; height: 50px; width: 100%;"></div>
+</div>     
+  
        
 <?php /*?><script type="text/javascript" src="<?php echo base_url().'assets-web/'?>js/navigation/jquery-1.8.0.js"></script>
 <script type="text/javascript" src="<?php echo base_url().'assets-web/'?>js/navigation/jPages.js"></script><?php */?>

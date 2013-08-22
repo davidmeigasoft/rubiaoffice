@@ -30,7 +30,8 @@ class Inicio extends CI_Controller {
 	    } 
 	 
 	public function index(){
-			$this->load->view('web/index');
+			$data['categoria'] = $this->categoria_model->categoria();
+			$this->load->view('web/index', $data);
 		}//End Index
 		
 	public function home(){

@@ -294,12 +294,54 @@
 /*------------------------------------------------------*/
 
 #opciones_visualizacion{
-	background-color: #EEE; 
+	background-color: #F7F7F7;
 	margin-bottom: 15px;
-	border-radius: 5px;
+	border-radius: 3px;
+	height:30px;
+	margin-bottom: 30px;
+	
+-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 	}
 
+.boton_vista_inactivo, .boton_vista_activo
+	{13px;
+	width: 140px;
+	float: right;
+	margin: 3px;
+	text-align:center;
+	
+-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+	}
+	
+.boton_vista_inactivo:hover, .boton_vista_activo:hover
+	{
+	cursor: pointer;
+	}
 
+.boton_vista_inactivo
+	{
+	background-color: #CCC;
+	border: solid 1px #BBB;
+	border-radius: 2px;"
+	
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+	}
+
+.boton_vista_activo
+	{
+	background-color: #EEE;
+	border: solid 1px #CCC;
+	border-radius: 2px;"
+	color: red;
+	}
+
+.boton_vista_activo span
+	{
+	color: #CCC;
+	}
 
 /*------------------*/
 /*	PAGES
@@ -1076,6 +1118,7 @@ ul.socials_home_links {
 
 		overflow: hidden;
 		float:left;
+		text-align: center;
 	}
 
 #listado_ultimos_productos .ultimos_productos
@@ -1994,8 +2037,8 @@ ul.post_meta_links_small {
 /* holder */
 
 .holder span, .holder a, .page-numbers {
-	display:block;
-	float:left;
+	/*display:block;
+	float:left;*/ /*comentado para que se centre paginación*/
 	margin: 2px 5px 2px 0;
 	padding:0px 10px;
 	text-decoration:none;
@@ -3828,9 +3871,13 @@ p.error {
 
 
 
+@media only screen and (min-width: 480px) and (max-width: 767px){
 
-
-
+	.sub_footer
+		{
+		display:none;
+		}
+}
 
 
 

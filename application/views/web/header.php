@@ -85,25 +85,23 @@
         	
         	<ul id="tiny">
                     
-                        <li><a href="<?php echo base_url().'inicio/home'; ?>">Empresa</a>
-                        </li>  
-            
-                        <?php foreach($categoria as $cat): ?>
-						<li><a href="<?php echo base_url().'inicio/categoria/'.$cat->categoria_id.'/'.$cat->nombre; ?>"><?php echo $cat->nombre;?></a>
-							<ul>
-                            <?php foreach($subcategoria as $subcat): ?>
-                            <?php if($cat->categoria_id == $subcat->categoria):?>
-                            	<li><a href="<?php echo base_url().'inicio/listar_categoria/'.$cat->categoria_id.'/'.$subcat->subcategoria_id.'/'.$subcat->nombre; ?>"><?php echo $subcat->nombre; ?></a>
-                            <?php endif; ?>
-                            <?php endforeach; ?>
-                            </ul>
-                          
-                		 <?php endforeach; ?>
-
-
-                        <li><a href="<?php echo base_url().'inicio/contacto'; ?>">Contacto</a>
-                        </li>
+                <li><a href="<?php echo base_url().'inicio/home'; ?>">Empresa</a></li>  
+    
+                <?php foreach($categoria as $cat): ?>
+                <li><a href="<?php echo base_url().'inicio/categoria/'.$cat->categoria_id.'/'.$cat->nombre; ?>"><?php echo $cat->nombre;?></a>
+                    <ul>
+                    <?php foreach($subcategoria as $subcat): ?>
+                    <?php if($cat->categoria_id == $subcat->categoria):?>
+                        <li><a href="<?php echo base_url().'inicio/listar_categoria/'.$cat->categoria_id.'/'.$subcat->subcategoria_id.'/'.$subcat->nombre; ?>"><?php echo $subcat->nombre; ?></a>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
                     </ul>
+                  
+                 <?php endforeach; ?>
+    
+    
+                <li><a href="<?php echo base_url().'inicio/contacto'; ?>">Contacto</a></li>
+            </ul>
           
 		</div>
         

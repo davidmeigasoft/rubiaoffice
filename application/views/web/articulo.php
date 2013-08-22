@@ -95,7 +95,7 @@
 								echo '<span><strong>Unidades en almacén</strong><i>'.$art->stock.'</i></span>';
 							endif;?>
                             
-                            <?php if($art->stock != ''): 
+                            <?php if($art->url != ''): 
 								echo '<span><i><a href="'.$art->url.'">Más información</a></i></span>';
 							endif;?>
                             

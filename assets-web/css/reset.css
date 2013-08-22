@@ -226,6 +226,21 @@ a:hover {
 	color: #454545;
 }
 
+/*Enlaces articulos subfooter*/
+li a {
+	color: #999;
+	text-decoration: none;
+	text-align: center;
+	-webkit-transition:all 200ms ease-in;
+	-o-transition:all 200ms ease-in;
+	-moz-transition:all 200ms ease-in;
+}
+
+li a:hover {
+	text-decoration: none;
+	color: #444;
+}
+
 blockquote, q {
 quotes: none;
 }

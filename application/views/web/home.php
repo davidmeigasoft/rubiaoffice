@@ -42,7 +42,7 @@ Grandes ofertas</div>
 <div class="container">
 	
     <div class="one_fourth">
-    	<h2>Quienes somos</h2>
+    	<h2>Quiénes somos</h2>
         <p>Empresa especializada en la distribución y suministro de material para oficina, papelería, consumibles, con un amplio catálogo de más de 10.000 referencias.
 
 

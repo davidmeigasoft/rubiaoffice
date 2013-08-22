@@ -166,35 +166,35 @@
 	float: left;
 	width: 92px;
 	height: 92px;
-	background: #ff7902 url(../../images/sliders/iosslider/thumb1.png) no-repeat center top;
+	/*background: #ff7902 url(../../images/sliders/iosslider/thumb1.png) no-repeat center top;*/
 	margin: 0 10px 10px 0px;
 	padding: 0px;
-	border: 4px solid #f57402;
+	border: 4px solid #fff;
 }
 .sliderContainer .slideSelectors .item:hover {
-	border: 4px solid #fff;
-	background: #e3e3e3 url(../../images/sliders/iosslider/thumb1.png) no-repeat center top;
+	border: 4px solid #ddd;
+	/*background: #e3e3e3 url(../../images/sliders/iosslider/thumb1.png) no-repeat center top;*/
 }
 .sliderContainer .slideSelectors .selected {
 	background: #e3e3e3 url(../../images/sliders/iosslider/thumb1.png) no-repeat center top;
-	border: 4px solid #fff;
+	*border: 4px solid #fff;
 }
 
 .sliderContainer .slideSelectors .item.two {
 	float: left;
 	width: 92px;
 	height: 92px;
-	background: #ffc900 url(../../images/sliders/iosslider/thumb2.png) no-repeat center top;
+	/*background: #ffc900 url(../../images/sliders/iosslider/thumb2.png) no-repeat center top;*/
 	margin: 0 10px 10px 0px;
 	padding: 0px;
-	border: 4px solid #f5c100;
+	/*border: 4px solid #f5c100;*/
 }
 .sliderContainer .slideSelectors .item.two:hover {
-	border: 4px solid #fff;
-	background: #e3e3e3 url(../../images/sliders/iosslider/thumb2.png) no-repeat center top;
+	border: 4px solid #ddd;
+	/*background: #e3e3e3 url(../../images/sliders/iosslider/thumb2.png) no-repeat center top;*/
 }
 .sliderContainer .slideSelectors .selected.two {
-	background: #e3e3e3 url(../../images/sliders/iosslider/thumb2.png) no-repeat center top;
+	/*background: #e3e3e3 url(../../images/sliders/iosslider/thumb2.png) no-repeat center top;*/
 	border: 4px solid #fff;
 }
 
@@ -202,17 +202,17 @@
 	float: left;
 	width: 92px;
 	height: 92px;
-	background: #00e97d url(../../images/sliders/iosslider/thumb3.png) no-repeat center top;
+	/*background: #00e97d url(../../images/sliders/iosslider/thumb3.png) no-repeat center top;*/
 	margin: 0 10px 10px 0px;
 	padding: 0px;
-	border: 4px solid #00e078;
+	/*border: 4px solid #00e078;*/
 }
 .sliderContainer .slideSelectors .item.three:hover {
-	border: 4px solid #fff;
-	background: #e3e3e3 url(../../images/sliders/iosslider/thumb3.png) no-repeat center top;
+	border: 4px solid #ddd;
+	/*background: #e3e3e3 url(../../images/sliders/iosslider/thumb3.png) no-repeat center top;*/
 }
 .sliderContainer .slideSelectors .selected.three {
-	background: #e3e3e3 url(../../images/sliders/iosslider/thumb3.png) no-repeat center top;
+	/*background: #e3e3e3 url(../../images/sliders/iosslider/thumb3.png) no-repeat center top;*/
 	border: 4px solid #fff;
 }
 
@@ -220,17 +220,17 @@
 	float: left;
 	width: 92px;
 	height: 92px;
-	background: #00c6e3 url(../../images/sliders/iosslider/thumb4.png) no-repeat center top;
+	/*background: #00c6e3 url(../../images/sliders/iosslider/thumb4.png) no-repeat center top;*/
 	margin: 0 10px 10px 0px;
 	padding: 0px;
-	border: 4px solid #00beda;
+	/*border: 4px solid #00beda;*/
 }
 .sliderContainer .slideSelectors .item.four:hover {
-	border: 4px solid #fff;
-	background: #e3e3e3 url(../../images/sliders/iosslider/thumb4.png) no-repeat center top;
+	border: 4px solid #ddd;
+	/*background: #e3e3e3 url(../../images/sliders/iosslider/thumb4.png) no-repeat center top;*/
 }
 .sliderContainer .slideSelectors .selected.four {
-	background: #e3e3e3 url(../../images/sliders/iosslider/thumb4.png) no-repeat center top;
+	/*background: #e3e3e3 url(../../images/sliders/iosslider/thumb4.png) no-repeat center top;*/
 	border: 4px solid #fff;
 }
 

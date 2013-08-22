@@ -254,8 +254,8 @@
 .jcarousel-skin-tango-footer .jcarousel-item-horizontal {
 	margin-left: 0;
     margin-right: 29px;
-	background-color: #f9f9f9;
-	border-bottom: 1px solid #e6e6e6;
+	/*background-color: #f9f9f9;
+	border-bottom: 1px solid #e6e6e6;*/
 }
 
 .jcarousel-skin-tango-footer .jcarousel-direction-rtl .jcarousel-item-horizontal {

@@ -27,7 +27,7 @@
 
         	<?php foreach($menu as $subcat): ?>
           
-						<li><a href="<?php echo base_url().'inicio/listar_categoria/'.$subcat->categoria.'/'.$subcat->subcategoria_id.'/'.$subcat->nombre; ?>"><?php echo ucfirst($subcat->nombre); ?></a></li>
+				<li><a href="<?php echo base_url().'inicio/listar_categoria/'.$subcat->categoria.'/'.$subcat->subcategoria_id.'/'.$subcat->nombre; ?>"><?php echo ucfirst($subcat->nombre); ?></a></li>
                 
             <?php endforeach;?>
 		</ul>
@@ -64,9 +64,9 @@
     	<li><span><a href="#">
         
         <?php if($row->file_name != ""): ?>
-        <img src="<?php  echo base_url().'uploads/articulo/small/'.$row->file_name; ?>"  alt="" />
+        <img src="<?php echo base_url();?>/image.php?width=50px&amp;cropratio=1:1&amp;image=<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?>"  alt="" />
         <?php else: ?>
-        <img src="<?php  echo base_url().'uploads/articulo/noimage_small.png'; ?>"  alt="" />
+        <img src="<?php echo base_url();?>/image.php?width=50px&amp;cropratio=1:1&amp;image=<?php echo base_url().'uploads/articulo/noimage_small.png'; ?>"  alt="" />
         <?php endif; ?>
         </a></span>
          <a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"> <?php echo $row->articulo_nombre; ?></a>
@@ -120,7 +120,10 @@
               </div>-->
               <!-- end section -->
  
-              
+    <div id="opciones_visualizacion" class="three_foourth" >  
+        <div class="boton_vista_inactivo" id="cuadricula"><span>Mostrar en cuadrícula</span></div>    
+        <div class="boton_vista_activo" id="lista"><span>Mostrar en lista</span></div>
+    </div>
           
     <div id="itemContainer"> 
        
@@ -162,7 +165,8 @@
 <div class="clearfix divider_line02"></div>
 
 </div>
-    <div class="container_holder"><div class="holder" style="text-align: center; float: right; height: 50px; width: 100%;"></div>
+<div class="container_holder">
+	<div class="holder" style="text-align: center; float: right; height: 50px; width: 100%;"></div>
 </div>     
 
        
@@ -177,7 +181,7 @@
             /* initiate plugin */
             $("div.holder").jPages({
                 containerID: "itemContainer",
-                 perPage   : 3
+                 perPage   : 6
             });
         });
         
