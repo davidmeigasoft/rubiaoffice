@@ -121,6 +121,23 @@
               <!-- end section -->
  
     <div id="opciones_visualizacion" class="three_foourth" >  
+    
+    	 <div class="estilo_select">
+         <?php foreach($datos_subcategoria as $row):?> 
+        <form id="ordenacion"  name="ordenar" action="<?php echo base_url().'inicio/ordenar_articulos_subcategoria/'.$row->categoria.'/'.$row->subcategoria_id.'/'.$row->nombre; ?>" method="post"> 
+        
+        <select onchange="this.form.submit()" name="ordenar" type="submit">
+        	<option value="az">Orden alfabético A-Z</option>
+            <option value="za">Orden alfabético Z-A</option>
+            <option value="caros">Más caros</option>
+            <option value="baratos">Más baratos</option>
+            <option value="recientes"> Más recientes</option>
+        </select>
+        
+		</form>
+        <?php endforeach; ?>
+ 		</div>
+    	
         <div class="boton_vista_inactivo" id="cuadricula"><span>Mostrar en cuadrícula</span></div>    
         <div class="boton_vista_activo" id="lista"><span>Mostrar en lista</span></div>
     </div>

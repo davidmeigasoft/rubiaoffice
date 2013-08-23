@@ -7,15 +7,15 @@
 	float: left;
 	padding: 0px;
 	margin: 0px;
-	width: 180px;
-	height: 180px;
+	width: 200px;
+	height: 200px;
 	background-color: #fff;
 	-webkit-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 	box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
 .site_logo h1 {
 	padding: 0px 0px 0px 0px;
-	margin: 59px 0px 0px 0px;
+	margin: 70px 0px 0px 0px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	font-size: 36px;
@@ -145,15 +145,15 @@
 
 #site_menu {
 	float: left;
-	width: 180px;
-	height: 180px;
+	width: 200px;
+	height: 200px;
 	background-color: #ff7902;
 	-webkit-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 	box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
 #site_menu ul {
 	float: right;
-	margin: 20px 18px 0px 0px;
+	margin: 12px 18px 0px 0px;
 	padding: 0px;
 }
 #site_menu li {
@@ -316,7 +316,8 @@ box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 	}
 
 .boton_vista_inactivo, .boton_vista_activo
-	{13px;
+	{
+	height: 20px;
 	width: 140px;
 	float: right;
 	margin: 3px;
@@ -335,7 +336,7 @@ box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 	{
 	background-color: #CCC;
 	border: solid 1px #BBB;
-	border-radius: 2px;"
+	border-radius: 2px;
 	
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
@@ -345,14 +346,33 @@ box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 	{
 	background-color: #EEE;
 	border: solid 1px #CCC;
-	border-radius: 2px;"
-	color: red;
+	border-radius: 2px;
 	}
 
 .boton_vista_activo span
 	{
 	color: #CCC;
 	}
+
+.estilo_select select {
+   float:left;
+   background: #CCC;
+   width: 180px;
+   margin: 5px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 20px;
+   -webkit-appearance: none;
+   background: url(../images/down-arrow2.png) no-repeat 158px 5px #fff !important;
+   
+   border-radius: 2px;
+   border: solid 1px #BBB;
+   
+   	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+   }
+
 
 /*------------------*/
 /*	PAGES

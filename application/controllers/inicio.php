@@ -101,6 +101,7 @@ class Inicio extends CI_Controller {
 			$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
 			//$data['imagen_mid'] = $this->thumb_model->obtener_imagen_articulo();
 			$data['listado_articulos'] = $this->articulo_model->lista_articulos_sub($subcategoria_id);
+			$data['datos_subcategoria'] = $this->subcategoria_model->datos_subcategoria($subcategoria_id);
 			//print_r($data['imagen_mid']);
 			//exit;
 			$data['articulo'] = $this->articulo_model->articulo();
@@ -109,42 +110,6 @@ class Inicio extends CI_Controller {
 			//$data['menu_categoria'] = $this->categoria_model->categoria_por_id($categoria_id);
 			$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
 			
-			
-			//paginación
-			$cantidad = $this->articulo_model->count_articulos_subcategoria($subcategoria_id);
-			$this->load->library('pagination');
-			$desde = ($this->uri->segment(6)) ? $this->uri->segment(6) : 0;
-			$this->load->library('pagination');
-			$config['base_url'] =base_url().'inicio/listar_categoria/'.$categoria_id.'/'.$subcategoria_id.'/'.$nombre_subcategoria;
-			$config['total_rows'] = $cantidad;
-			$config['per_page'] = '3';
-			
-			$config['full_tag_open'] = '<ul>';
-			$config['full_tag_close'] = '</ul>';
-			$config['first_link'] = 'Primero';
-			$config['first_tag_open'] = '<li>';
-			$config['first_tag_close'] = '</li>';
-			$config['last_link'] = 'Ultimo';
-			$config['last_tag_open'] = '<li>';
-			$config['last_tag_close'] = '</li>';
-			$config['next_link'] = '&gt';
-			$config['next_tag_open'] = '<li>';
-			$config['next_tag_close'] = '</li>';
-			$config['prev_link'] = '&lt';
-			$config['prev_tag_open'] = '<li>';
-			$config['prev_tag_close'] = '</li>';
-			$config['cur_tag_open'] = '<li class="active"><a>';
-			$config['cur_tag_close'] = '</a></li>';
-			$config['num_tag_open'] = '<li>';
-			$config['num_tag_close'] = '</li>';
-			
-			$data['listado_articulos'] = $this->articulo_model->lista_articulos_sub($subcategoria_id, $config['per_page'],$desde);
-			
-			$data['articulo_subcategoria'] = $this->subcategoria_model->articulos_subcategoria($subcategoria_id, $config['per_page'],$desde);
-
-			$this->pagination->initialize($config);
-			
-			$data['pagination'] =  $this->pagination->create_links(); 
 			
 			$this->load->view('web/header', $data);
 			$this->load->view('web/subcategoria',$data);
@@ -301,6 +266,52 @@ public function validar_formulario_articulo(){
 	}//End validar
 	
 	
+	
+public function ordenar_articulos_categoria($categoria_id)
+	{
+	$data['categoria'] = $this->categoria_model->categoria();
+	$data['subcategoria'] = $this->subcategoria_model->subcategoria();
+	$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();	
+	$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
+	
+	$ordenacion = $this->input->post('ordenar');
+	
+	$data['listado_articulos_categoria'] = $this->articulo_model->articulos_categoria_orden($categoria_id, $ordenacion);
+	
+	$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
+	$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
+	
+	$this->load->view('web/header', $data);
+	$this->load->view('web/categoria',$data);
+	$this->load->view('web/footer', $data);
+	}
+
+public function ordenar_articulos_subcategoria($categoria_id, $subcategoria_id, $nombre_subcategoria)
+{
+	$data['categoria'] = $this->categoria_model->categoria();
+	$data['subcategoria'] = $this->subcategoria_model->subcategoria();
+	$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
+	$data['nombre_subcategoria'] = $nombre_subcategoria;
+	$data['datos_subcategoria'] = $this->subcategoria_model->datos_subcategoria($subcategoria_id);
+	$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
+	//$data['imagen_mid'] = $this->thumb_model->obtener_imagen_articulo();
+	
+	$ordenacion = $this->input->post('ordenar');
+	
+	$data['listado_articulos'] = $this->articulo_model->articulos_subcategoria_orden($subcategoria_id, $ordenacion);
+
+	$data['articulo'] = $this->articulo_model->articulo();
+	$data['ultimos_articulos_sub'] = $this->articulo_model->lista_ultimos_articulos_sub($subcategoria_id);
+	$data['numero_imagenes'] = $this->articulo_model->obtener_numero_imagenes_subcat($subcategoria_id);
+	//$data['menu_categoria'] = $this->categoria_model->categoria_por_id($categoria_id);
+	$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
+	
+	$data['pagination'] =  $this->pagination->create_links(); 
+	
+	$this->load->view('web/header', $data);
+	$this->load->view('web/subcategoria',$data);
+	$this->load->view('web/footer', $data);
+}
 	
 	
 	
