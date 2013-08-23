@@ -153,43 +153,58 @@
           
     <div id="itemContainer"> 
        
+       
+       
     <?php foreach($listado_articulos_categoria as $row): ?>
     
     <div class="blog_post"><!-- /# post -->	
         <div class="blog_postcontent">
-            
             <div class="image_frame small">
-            <?php if($row->file_name != ""): ?>
-            <img src="<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?> "/>
-            <?php else: ?>
-            <img src="<?php echo base_url().'uploads/articulo/noimage_min.png';?> "/>
-            <?php endif; ?>
+             <?php if($row->url != ""): ?>
+            
+            <a href="http://<?php echo $row->url; ?>" target="_blank"> <img src="<?php echo base_url().'uploads/articulo/link_mid.png';?> "/>		
+            
             </div>
-            
             <div class="post_info_content_small">
-            <h3><a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></h3>
-            
-           
-            
+            <h3><a href="http://<?php $row->url; ?>"><?php echo ucfirst($row->articulo_nombre); ?></a></h3>
+                
             <div class="clearfix"></div>
-             <h5> <?php if($row->precio != ""): echo "Precio: ".ucfirst($row->precio).'€'; endif; ?></h5>
-            <p><?php echo word_limiter($row->articulo_desc, 15); ?></p><br>
+            
+             <p><a href="http://<?php $row->url; ?>"><?php echo $row->url; ?></a></p><br>
+            
+            <?php else: ?>
+            
+            
+				<?php if($row->file_name != ""): ?>
+                	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
+                    <img src="<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?> "/>
+                    </a>
+                <?php else: ?>
+                
+                	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
+                    <img src="<?php echo base_url().'uploads/articulo/noimage_min.png';?> "/>
+                    </a>
+                <?php endif;?>
+                </div>
+                
+                <div class="post_info_content_small">
+                <h3><a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></h3>
+                
+                <div class="clearfix"></div>
+                
+                <p><?php echo word_limiter($row->articulo_desc, 15); ?></p><br>
+            
+            
+            <?php endif; ?>
             <!--<a class="but_info" href="master.php">+ Info</a> &nbsp; <a class="but_pdf" href="#">Descarga PDF</a>-->
             
             </div>
         </div>
     </div><!-- /# end post -->
 
-   
-    <?php endforeach; ?>
-    </div>
-    </div>
-        
+	<?php endforeach; ?>
 
-</div><!-- /# end post -->
-
-
-            
+                
 <div class="clearfix divider_line02"></div>
 
 </div>

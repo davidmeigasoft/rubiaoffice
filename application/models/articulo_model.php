@@ -151,7 +151,7 @@ function obtener_numero_imagenes_subcat($subcategoria_id)
 	
 function lista_articulos_sub($subcategoria_id) 
 	{
-		$this->db->select('file_name, categoria_id, subcategoria_id, articulo.nombre as articulo_nombre, articulo_id, articulo.desc as articulo_desc');
+		$this->db->select('file_name, categoria_id, subcategoria_id, articulo.nombre as articulo_nombre, articulo_id, articulo.desc as articulo_desc, url');
 		$this->db->from('subcategoria');
 		$this->db->join('articulo', 'articulo.subcategoria = subcategoria.subcategoria_id', 'left');
 		$this->db->join('imagen_articulo', 'imagen_articulo.articulo = articulo.articulo_id', 'left');
@@ -167,7 +167,7 @@ function lista_ultimos_articulos_sub($subcategoria_id)
 	{
 		$this->db->limit(5);
 		$this->db->order_by("fecha_alta", "desc"); 
-		$this->db->select('file_name, categoria_id, subcategoria_id, articulo.nombre as articulo_nombre, articulo_id, articulo.desc as articulo_desc');
+		$this->db->select('file_name, categoria_id, subcategoria_id, articulo.nombre as articulo_nombre, articulo_id, articulo.desc as articulo_desc, url');
 		$this->db->from('subcategoria');
 		$this->db->join('articulo', 'articulo.subcategoria = subcategoria.subcategoria_id', 'left');
 		$this->db->join('imagen_articulo', 'imagen_articulo.articulo = articulo.articulo_id', 'left');
@@ -183,7 +183,7 @@ function lista_ultimos_articulos_sub($subcategoria_id)
 function ultimos_articulos()
 	{
 		$this->db->order_by('fecha_alta', 'desc');
-		$this->db->select('file_name, categoria_id, subcategoria_id, articulo.nombre as articulo_nombre, articulo_id, articulo.desc as articulo_desc');
+		$this->db->select('file_name, categoria_id, subcategoria_id, articulo.nombre as articulo_nombre, articulo_id, articulo.desc as articulo_desc, url');
 		$this->db->from('articulo');
 		$this->db->join('imagen_articulo', 'articulo.articulo_id = imagen_articulo.articulo', 'left');
 		$this->db->join('subcategoria', 'articulo.subcategoria = subcategoria.subcategoria_id', 'left');
@@ -198,7 +198,7 @@ function ultimos_articulos()
 	
 function articulos_categoria($categoria_id)
 	{
-		$this->db->select('categoria_id, subcategoria_id, articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name, articulo.precio');
+		$this->db->select('categoria_id, subcategoria_id, articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name, articulo.precio, url');
 		$this->db->from('articulo');
 		$this->db->join('imagen_articulo', 'articulo.articulo_id = imagen_articulo.articulo', 'left');
 		$this->db->join('subcategoria', 'articulo.subcategoria = subcategoria.subcategoria_id', 'left');
@@ -214,7 +214,7 @@ function articulos_categoria($categoria_id)
 	
 function articulos_categoria_orden($categoria_id, $orden)
 	{
-		$this->db->select('categoria_id, subcategoria_id, articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name, articulo.precio, fecha_alta');
+		$this->db->select('categoria_id, subcategoria_id, articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name, articulo.precio, fecha_alta, url');
 		$this->db->from('articulo');
 		$this->db->join('imagen_articulo', 'articulo.articulo_id = imagen_articulo.articulo', 'left');
 		$this->db->join('subcategoria', 'articulo.subcategoria = subcategoria.subcategoria_id', 'left');
@@ -240,7 +240,7 @@ function articulos_categoria_orden($categoria_id, $orden)
 			break;
 			
 			case "recientes":
-				$this->db->order_by("fecha_alta", "asc");
+				$this->db->order_by("fecha_alta", "desc");
 			break;
 		}
 		
@@ -252,7 +252,7 @@ function articulos_categoria_orden($categoria_id, $orden)
 	
 	function articulos_subcategoria_orden($subcategoria_id, $orden) 
 	{
-		$this->db->select('file_name, categoria_id, subcategoria_id, articulo.nombre as articulo_nombre, articulo_id, articulo.desc as articulo_desc');
+		$this->db->select('file_name, categoria_id, subcategoria_id, articulo.nombre as articulo_nombre, articulo_id, articulo.desc as articulo_desc, url');
 		$this->db->from('subcategoria');
 		$this->db->join('articulo', 'articulo.subcategoria = subcategoria.subcategoria_id', 'left');
 		$this->db->join('imagen_articulo', 'imagen_articulo.articulo = articulo.articulo_id', 'left');
@@ -278,7 +278,7 @@ function articulos_categoria_orden($categoria_id, $orden)
 			break;
 			
 			case "recientes":
-				$this->db->order_by("fecha_alta", "asc");
+				$this->db->order_by("fecha_alta", "desc");
 			break;
 		}
 		

@@ -17,8 +17,11 @@
         
         
         
-        <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Empresa</a> <i>/</i> <a href="<?php echo base_url(); ?>">				<?php foreach($datos_categoria as $cat):?>
-        
+        <div class="reght_pagenation"><a href="<?php echo base_url().'inicio/home'; ?>">Empresa</a> <i>/</i> <a href="<?php echo base_url(); ?>">				<?php foreach($datos_categoria as $cat):?>
+                
+        <a href="<?php echo base_url().'inicio/categoria/'.$cat->categoria_id.'/'.$cat->nombre;?>">
+        <?php echo ucfirst($cat->nombre); ?>
+        </a><i>/</i>
         
 									<?php foreach($datos_subcategoria as $row): ?>
 									 	<a href="<?php echo base_url().'inicio/listar_categoria/'.$cat->categoria_id.'/'.$row->subcategoria_id.'/'.$row->nombre;?>"><?php echo ucfirst($row->nombre); ?></a>
@@ -105,9 +108,11 @@
      			  </div>
                 
                 
+                <div class="project_details" style="margin-top: 40px;"> 
                 
 					<form name="form" method="post" class="form-horizontal" action="<?php echo base_url().'inicio/validar_formulario_articulo'; ?>">  
-					<h3 style="margin-top: 30px;">Solicitar información</h3>
+                    
+					<h3 style ="padding-top: 40px; margin-bottom: -25px;">Solicitar información</h3>
 						<fieldset>
 						
 												
@@ -145,7 +150,7 @@
 						</fieldset>
 						
 						</form> 
-                
+                </div>
                
             </div>
           </div>    

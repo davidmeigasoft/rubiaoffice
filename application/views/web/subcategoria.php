@@ -4,7 +4,20 @@
 
 	<div class="container">
 		<div class="leaft_title"><h1><?php echo ucfirst(str_replace("%20", " ",$nombre_subcategoria));?></h1></div>
-        <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Home</a><i>/</i> Mobiliario</div>
+        
+        
+        
+        <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Home</a><i>/</i>
+        
+         <?php foreach ($datos_categoria as $row):?>
+        <a href="<?php echo base_url().'inicio/categoria/'.$row->categoria_id.'/'.$row->nombre;?>">
+        <?php echo ucfirst($row->nombre); endforeach; ?>
+        </a>
+        
+        <i>/</i>
+		<?php foreach ($datos_subcategoria as $row): echo ucfirst($row->nombre); endforeach; ?>
+        </div>
+       
 	</div>
 </div><!-- end page title --> 
 
@@ -66,12 +79,21 @@
         <?php if($row->file_name != ""): ?>
         <img src="<?php echo base_url();?>/image.php?width=50px&amp;cropratio=1:1&amp;image=<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?>"  alt="" />
         <?php else: ?>
+        
+        <?php if($row->file_name == "" && $row->url != ""): ?>
+        <img src="<?php echo base_url().'uploads/articulo/link_small.png';?> "/>
+        <?php else: ?>
+        
         <img src="<?php echo base_url();?>/image.php?width=50px&amp;cropratio=1:1&amp;image=<?php echo base_url().'uploads/articulo/noimage_small.png'; ?>"  alt="" />
-        <?php endif; ?>
+        <?php endif; endif; ?>
         </a></span>
          <a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"> <?php echo $row->articulo_nombre; ?></a>
               <i><?php echo word_limiter($row->articulo_desc, 10); ?></i>
         </li>
+        
+
+        
+        
 	
 	<?php endforeach; ?>
     </ul>
@@ -148,21 +170,44 @@
     
     <div class="blog_post"><!-- /# post -->	
         <div class="blog_postcontent">
-            
             <div class="image_frame small">
-            <?php if($row->file_name != ""): ?>
-            <img src="<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?> "/>
-            <?php else: ?>
-            <img src="<?php echo base_url().'uploads/articulo/noimage_min.png';?> "/>
-            <?php endif; ?>
+            
+            <?php if($row->url != ""): ?>
+            
+            <a href="http://<?php echo $row->url; ?>" target="_blank"> <img src="<?php echo base_url().'uploads/articulo/link_mid.png';?> "/>		
+            
             </div>
-            
             <div class="post_info_content_small">
-            <h3><a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></h3>
-            
+            <h3><a href="http://<?php $row->url; ?>"><?php echo ucfirst($row->articulo_nombre); ?></a></h3>
+                
             <div class="clearfix"></div>
             
-            <p><?php echo word_limiter($row->articulo_desc, 15); ?></p><br>
+             <p><a href="http://<?php $row->url; ?>"><?php echo $row->url; ?></a></p><br>
+            
+            <?php else: ?>
+            
+            
+				<?php if($row->file_name != ""): ?>
+                	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
+                    <img src="<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?> "/>
+                    </a>
+                <?php else: ?>
+                
+                	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
+                    <img src="<?php echo base_url().'uploads/articulo/noimage_min.png';?> "/>
+                    </a>
+                <?php endif;?>
+                </div>
+                
+                <div class="post_info_content_small">
+                <h3><a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></h3>
+                
+                <div class="clearfix"></div>
+                
+                <p><?php echo word_limiter($row->articulo_desc, 15); ?></p><br>
+            
+            
+            <?php endif; ?>
             <!--<a class="but_info" href="master.php">+ Info</a> &nbsp; <a class="but_pdf" href="#">Descarga PDF</a>-->
             
             </div>
