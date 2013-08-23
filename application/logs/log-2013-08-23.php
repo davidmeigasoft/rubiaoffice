@@ -19459,3 +19459,373 @@ DEBUG - 2013-08-23 18:49:04 --> File loaded: application/views/web/articulo.php
 DEBUG - 2013-08-23 18:49:04 --> File loaded: application/views/web/footer.php
 DEBUG - 2013-08-23 18:49:04 --> Final output sent to browser
 DEBUG - 2013-08-23 18:49:04 --> Total execution time: 5.2783
+DEBUG - 2013-08-23 19:36:20 --> Config Class Initialized
+DEBUG - 2013-08-23 19:36:20 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:36:20 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:36:20 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:36:21 --> URI Class Initialized
+DEBUG - 2013-08-23 19:36:21 --> Router Class Initialized
+DEBUG - 2013-08-23 19:36:21 --> No URI present. Default controller set.
+DEBUG - 2013-08-23 19:36:21 --> Output Class Initialized
+DEBUG - 2013-08-23 19:36:21 --> Security Class Initialized
+DEBUG - 2013-08-23 19:36:21 --> Input Class Initialized
+DEBUG - 2013-08-23 19:36:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-23 19:36:21 --> Language Class Initialized
+DEBUG - 2013-08-23 19:36:21 --> Loader Class Initialized
+DEBUG - 2013-08-23 19:36:22 --> Helper loaded: url_helper
+DEBUG - 2013-08-23 19:36:22 --> Helper loaded: form_helper
+DEBUG - 2013-08-23 19:36:22 --> Helper loaded: download_helper
+DEBUG - 2013-08-23 19:36:22 --> Helper loaded: file_helper
+DEBUG - 2013-08-23 19:36:22 --> Database Driver Class Initialized
+DEBUG - 2013-08-23 19:36:22 --> Native_session Class Initialized
+DEBUG - 2013-08-23 19:36:22 --> Form Validation Class Initialized
+DEBUG - 2013-08-23 19:36:22 --> Email Class Initialized
+DEBUG - 2013-08-23 19:36:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:36:23 --> Cart Class Initialized
+DEBUG - 2013-08-23 19:36:23 --> Controller Class Initialized
+DEBUG - 2013-08-23 19:36:23 --> Helper loaded: date_helper
+DEBUG - 2013-08-23 19:36:23 --> Helper loaded: text_helper
+DEBUG - 2013-08-23 19:36:23 --> Cart class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:36:23 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:36:23 --> Jquery Class Initialized
+DEBUG - 2013-08-23 19:36:23 --> Javascript Class Initialized and loaded.  Driver used: jquery
+DEBUG - 2013-08-23 19:36:23 --> Email class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:36:24 --> Pagination Class Initialized
+DEBUG - 2013-08-23 19:36:24 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:24 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:24 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:24 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:24 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:24 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:24 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:24 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:36:25 --> File loaded: application/views/web/index.php
+DEBUG - 2013-08-23 19:36:25 --> Final output sent to browser
+DEBUG - 2013-08-23 19:36:25 --> Config Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:36:25 --> URI Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Router Class Initialized
+ERROR - 2013-08-23 19:36:25 --> 404 Page Not Found --> js
+DEBUG - 2013-08-23 19:36:25 --> Config Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:36:25 --> URI Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Router Class Initialized
+ERROR - 2013-08-23 19:36:25 --> 404 Page Not Found --> js
+DEBUG - 2013-08-23 19:36:25 --> Config Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:36:25 --> URI Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Router Class Initialized
+ERROR - 2013-08-23 19:36:25 --> 404 Page Not Found --> js
+DEBUG - 2013-08-23 19:36:25 --> Total execution time: 4.8203
+DEBUG - 2013-08-23 19:36:25 --> Config Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:36:25 --> URI Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Router Class Initialized
+ERROR - 2013-08-23 19:36:25 --> 404 Page Not Found --> js
+DEBUG - 2013-08-23 19:36:25 --> Config Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Config Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:36:25 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> URI Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:36:25 --> URI Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Router Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Router Class Initialized
+ERROR - 2013-08-23 19:36:25 --> 404 Page Not Found --> js
+ERROR - 2013-08-23 19:36:25 --> 404 Page Not Found --> js
+DEBUG - 2013-08-23 19:36:25 --> Config Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:36:25 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:36:26 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:36:26 --> URI Class Initialized
+DEBUG - 2013-08-23 19:36:26 --> Router Class Initialized
+ERROR - 2013-08-23 19:36:26 --> 404 Page Not Found --> js
+DEBUG - 2013-08-23 19:36:35 --> Config Class Initialized
+DEBUG - 2013-08-23 19:36:35 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:36:35 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:36:35 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:36:35 --> URI Class Initialized
+DEBUG - 2013-08-23 19:36:35 --> Router Class Initialized
+DEBUG - 2013-08-23 19:36:35 --> Output Class Initialized
+DEBUG - 2013-08-23 19:36:36 --> Security Class Initialized
+DEBUG - 2013-08-23 19:36:36 --> Input Class Initialized
+DEBUG - 2013-08-23 19:36:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-23 19:36:36 --> Language Class Initialized
+DEBUG - 2013-08-23 19:36:36 --> Loader Class Initialized
+DEBUG - 2013-08-23 19:36:36 --> Helper loaded: url_helper
+DEBUG - 2013-08-23 19:36:36 --> Helper loaded: form_helper
+DEBUG - 2013-08-23 19:36:36 --> Helper loaded: download_helper
+DEBUG - 2013-08-23 19:36:36 --> Helper loaded: file_helper
+DEBUG - 2013-08-23 19:36:36 --> Database Driver Class Initialized
+DEBUG - 2013-08-23 19:36:37 --> Native_session Class Initialized
+DEBUG - 2013-08-23 19:36:37 --> Form Validation Class Initialized
+DEBUG - 2013-08-23 19:36:37 --> Email Class Initialized
+DEBUG - 2013-08-23 19:36:37 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:36:37 --> Cart Class Initialized
+DEBUG - 2013-08-23 19:36:37 --> Controller Class Initialized
+DEBUG - 2013-08-23 19:36:37 --> Helper loaded: date_helper
+DEBUG - 2013-08-23 19:36:37 --> Helper loaded: text_helper
+DEBUG - 2013-08-23 19:36:37 --> Cart class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:36:38 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:36:38 --> Jquery Class Initialized
+DEBUG - 2013-08-23 19:36:38 --> Javascript Class Initialized and loaded.  Driver used: jquery
+DEBUG - 2013-08-23 19:36:38 --> Email class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:36:38 --> Pagination Class Initialized
+DEBUG - 2013-08-23 19:36:38 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:38 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:38 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:38 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:39 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:39 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:39 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:39 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:39 --> Model Class Initialized
+DEBUG - 2013-08-23 19:36:39 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:36:39 --> File loaded: application/views/web/header.php
+DEBUG - 2013-08-23 19:36:39 --> File loaded: application/views/web/home.php
+DEBUG - 2013-08-23 19:36:39 --> File loaded: application/views/web/footer.php
+DEBUG - 2013-08-23 19:36:40 --> Final output sent to browser
+DEBUG - 2013-08-23 19:36:40 --> Total execution time: 4.8033
+DEBUG - 2013-08-23 19:36:59 --> Config Class Initialized
+DEBUG - 2013-08-23 19:36:59 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:36:59 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:36:59 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:36:59 --> URI Class Initialized
+DEBUG - 2013-08-23 19:36:59 --> Router Class Initialized
+DEBUG - 2013-08-23 19:36:59 --> Output Class Initialized
+DEBUG - 2013-08-23 19:36:59 --> Security Class Initialized
+DEBUG - 2013-08-23 19:36:59 --> Input Class Initialized
+DEBUG - 2013-08-23 19:36:59 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-23 19:37:00 --> Language Class Initialized
+DEBUG - 2013-08-23 19:37:00 --> Loader Class Initialized
+DEBUG - 2013-08-23 19:37:00 --> Helper loaded: url_helper
+DEBUG - 2013-08-23 19:37:00 --> Helper loaded: form_helper
+DEBUG - 2013-08-23 19:37:00 --> Helper loaded: download_helper
+DEBUG - 2013-08-23 19:37:00 --> Helper loaded: file_helper
+DEBUG - 2013-08-23 19:37:00 --> Database Driver Class Initialized
+DEBUG - 2013-08-23 19:37:00 --> Native_session Class Initialized
+DEBUG - 2013-08-23 19:37:00 --> Form Validation Class Initialized
+DEBUG - 2013-08-23 19:37:01 --> Email Class Initialized
+DEBUG - 2013-08-23 19:37:01 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:37:01 --> Cart Class Initialized
+DEBUG - 2013-08-23 19:37:01 --> Controller Class Initialized
+DEBUG - 2013-08-23 19:37:01 --> Helper loaded: date_helper
+DEBUG - 2013-08-23 19:37:01 --> Helper loaded: text_helper
+DEBUG - 2013-08-23 19:37:01 --> Cart class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:37:01 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:37:01 --> Jquery Class Initialized
+DEBUG - 2013-08-23 19:37:02 --> Javascript Class Initialized and loaded.  Driver used: jquery
+DEBUG - 2013-08-23 19:37:02 --> Email class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:37:02 --> Pagination Class Initialized
+DEBUG - 2013-08-23 19:37:02 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:02 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:02 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:02 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:02 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:03 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:03 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:03 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:03 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:03 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:37:03 --> File loaded: application/views/web/header.php
+DEBUG - 2013-08-23 19:37:03 --> File loaded: application/views/web/categoria.php
+DEBUG - 2013-08-23 19:37:03 --> File loaded: application/views/web/footer.php
+DEBUG - 2013-08-23 19:37:04 --> Final output sent to browser
+DEBUG - 2013-08-23 19:37:04 --> Total execution time: 4.9843
+DEBUG - 2013-08-23 19:37:45 --> Config Class Initialized
+DEBUG - 2013-08-23 19:37:45 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:37:45 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:37:45 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:37:46 --> URI Class Initialized
+DEBUG - 2013-08-23 19:37:46 --> Router Class Initialized
+DEBUG - 2013-08-23 19:37:46 --> Output Class Initialized
+DEBUG - 2013-08-23 19:37:46 --> Security Class Initialized
+DEBUG - 2013-08-23 19:37:46 --> Input Class Initialized
+DEBUG - 2013-08-23 19:37:46 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-23 19:37:46 --> Language Class Initialized
+DEBUG - 2013-08-23 19:37:46 --> Loader Class Initialized
+DEBUG - 2013-08-23 19:37:46 --> Helper loaded: url_helper
+DEBUG - 2013-08-23 19:37:47 --> Helper loaded: form_helper
+DEBUG - 2013-08-23 19:37:47 --> Helper loaded: download_helper
+DEBUG - 2013-08-23 19:37:47 --> Helper loaded: file_helper
+DEBUG - 2013-08-23 19:37:47 --> Database Driver Class Initialized
+DEBUG - 2013-08-23 19:37:47 --> Native_session Class Initialized
+DEBUG - 2013-08-23 19:37:47 --> Form Validation Class Initialized
+DEBUG - 2013-08-23 19:37:47 --> Email Class Initialized
+DEBUG - 2013-08-23 19:37:47 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:37:47 --> Cart Class Initialized
+DEBUG - 2013-08-23 19:37:48 --> Controller Class Initialized
+DEBUG - 2013-08-23 19:37:48 --> Helper loaded: date_helper
+DEBUG - 2013-08-23 19:37:48 --> Helper loaded: text_helper
+DEBUG - 2013-08-23 19:37:48 --> Cart class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:37:48 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:37:48 --> Jquery Class Initialized
+DEBUG - 2013-08-23 19:37:48 --> Javascript Class Initialized and loaded.  Driver used: jquery
+DEBUG - 2013-08-23 19:37:48 --> Email class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:37:48 --> Pagination Class Initialized
+DEBUG - 2013-08-23 19:37:49 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:49 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:49 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:49 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:49 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:49 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:49 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:49 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:49 --> Model Class Initialized
+DEBUG - 2013-08-23 19:37:50 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:37:50 --> File loaded: application/views/web/header.php
+DEBUG - 2013-08-23 19:37:50 --> File loaded: application/views/web/subcategoria.php
+DEBUG - 2013-08-23 19:37:50 --> File loaded: application/views/web/footer.php
+DEBUG - 2013-08-23 19:37:50 --> Final output sent to browser
+DEBUG - 2013-08-23 19:37:50 --> Total execution time: 4.9893
+DEBUG - 2013-08-23 19:38:18 --> Config Class Initialized
+DEBUG - 2013-08-23 19:38:18 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:38:18 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:38:18 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:38:18 --> URI Class Initialized
+DEBUG - 2013-08-23 19:38:18 --> Router Class Initialized
+DEBUG - 2013-08-23 19:38:18 --> Output Class Initialized
+DEBUG - 2013-08-23 19:38:18 --> Security Class Initialized
+DEBUG - 2013-08-23 19:38:19 --> Input Class Initialized
+DEBUG - 2013-08-23 19:38:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-23 19:38:19 --> Language Class Initialized
+DEBUG - 2013-08-23 19:38:19 --> Loader Class Initialized
+DEBUG - 2013-08-23 19:38:19 --> Helper loaded: url_helper
+DEBUG - 2013-08-23 19:38:19 --> Helper loaded: form_helper
+DEBUG - 2013-08-23 19:38:19 --> Helper loaded: download_helper
+DEBUG - 2013-08-23 19:38:19 --> Helper loaded: file_helper
+DEBUG - 2013-08-23 19:38:19 --> Database Driver Class Initialized
+DEBUG - 2013-08-23 19:38:20 --> Native_session Class Initialized
+DEBUG - 2013-08-23 19:38:20 --> Form Validation Class Initialized
+DEBUG - 2013-08-23 19:38:20 --> Email Class Initialized
+DEBUG - 2013-08-23 19:38:20 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:38:20 --> Cart Class Initialized
+DEBUG - 2013-08-23 19:38:20 --> Controller Class Initialized
+DEBUG - 2013-08-23 19:38:20 --> Helper loaded: date_helper
+DEBUG - 2013-08-23 19:38:20 --> Helper loaded: text_helper
+DEBUG - 2013-08-23 19:38:20 --> Cart class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:38:21 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:38:21 --> Jquery Class Initialized
+DEBUG - 2013-08-23 19:38:21 --> Javascript Class Initialized and loaded.  Driver used: jquery
+DEBUG - 2013-08-23 19:38:21 --> Email class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:38:21 --> Pagination Class Initialized
+DEBUG - 2013-08-23 19:38:21 --> Model Class Initialized
+DEBUG - 2013-08-23 19:38:21 --> Model Class Initialized
+DEBUG - 2013-08-23 19:38:21 --> Model Class Initialized
+DEBUG - 2013-08-23 19:38:21 --> Model Class Initialized
+DEBUG - 2013-08-23 19:38:22 --> Model Class Initialized
+DEBUG - 2013-08-23 19:38:22 --> Model Class Initialized
+DEBUG - 2013-08-23 19:38:22 --> Model Class Initialized
+DEBUG - 2013-08-23 19:38:22 --> Model Class Initialized
+DEBUG - 2013-08-23 19:38:22 --> Model Class Initialized
+DEBUG - 2013-08-23 19:38:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:38:22 --> File loaded: application/views/web/header.php
+DEBUG - 2013-08-23 19:38:22 --> File loaded: application/views/web/categoria.php
+DEBUG - 2013-08-23 19:38:22 --> File loaded: application/views/web/footer.php
+DEBUG - 2013-08-23 19:38:23 --> Final output sent to browser
+DEBUG - 2013-08-23 19:38:23 --> Total execution time: 5.0253
+DEBUG - 2013-08-23 19:40:29 --> Config Class Initialized
+DEBUG - 2013-08-23 19:40:29 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:40:29 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:40:29 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:40:29 --> URI Class Initialized
+DEBUG - 2013-08-23 19:40:29 --> Router Class Initialized
+DEBUG - 2013-08-23 19:40:29 --> Output Class Initialized
+DEBUG - 2013-08-23 19:40:29 --> Security Class Initialized
+DEBUG - 2013-08-23 19:40:30 --> Input Class Initialized
+DEBUG - 2013-08-23 19:40:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-23 19:40:30 --> Language Class Initialized
+DEBUG - 2013-08-23 19:40:30 --> Loader Class Initialized
+DEBUG - 2013-08-23 19:40:30 --> Helper loaded: url_helper
+DEBUG - 2013-08-23 19:40:30 --> Helper loaded: form_helper
+DEBUG - 2013-08-23 19:40:30 --> Helper loaded: download_helper
+DEBUG - 2013-08-23 19:40:30 --> Helper loaded: file_helper
+DEBUG - 2013-08-23 19:40:30 --> Database Driver Class Initialized
+DEBUG - 2013-08-23 19:40:31 --> Native_session Class Initialized
+DEBUG - 2013-08-23 19:40:31 --> Form Validation Class Initialized
+DEBUG - 2013-08-23 19:40:31 --> Email Class Initialized
+DEBUG - 2013-08-23 19:40:31 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:40:31 --> Cart Class Initialized
+DEBUG - 2013-08-23 19:40:31 --> Controller Class Initialized
+DEBUG - 2013-08-23 19:40:31 --> Helper loaded: date_helper
+DEBUG - 2013-08-23 19:40:31 --> Helper loaded: text_helper
+DEBUG - 2013-08-23 19:40:32 --> Cart class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:40:32 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:40:32 --> Jquery Class Initialized
+DEBUG - 2013-08-23 19:40:32 --> Javascript Class Initialized and loaded.  Driver used: jquery
+DEBUG - 2013-08-23 19:40:32 --> Email class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:40:32 --> Pagination Class Initialized
+DEBUG - 2013-08-23 19:40:32 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:32 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:32 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:33 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:33 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:33 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:33 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:33 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:33 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:33 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:40:33 --> File loaded: application/views/web/header.php
+DEBUG - 2013-08-23 19:40:33 --> File loaded: application/views/web/categoria.php
+DEBUG - 2013-08-23 19:40:34 --> File loaded: application/views/web/footer.php
+DEBUG - 2013-08-23 19:40:34 --> Final output sent to browser
+DEBUG - 2013-08-23 19:40:34 --> Total execution time: 5.0243
+DEBUG - 2013-08-23 19:40:42 --> Config Class Initialized
+DEBUG - 2013-08-23 19:40:42 --> Hooks Class Initialized
+DEBUG - 2013-08-23 19:40:42 --> Utf8 Class Initialized
+DEBUG - 2013-08-23 19:40:42 --> UTF-8 Support Enabled
+DEBUG - 2013-08-23 19:40:42 --> URI Class Initialized
+DEBUG - 2013-08-23 19:40:43 --> Router Class Initialized
+DEBUG - 2013-08-23 19:40:43 --> Output Class Initialized
+DEBUG - 2013-08-23 19:40:43 --> Security Class Initialized
+DEBUG - 2013-08-23 19:40:43 --> Input Class Initialized
+DEBUG - 2013-08-23 19:40:43 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-08-23 19:40:44 --> Language Class Initialized
+DEBUG - 2013-08-23 19:40:44 --> Loader Class Initialized
+DEBUG - 2013-08-23 19:40:44 --> Helper loaded: url_helper
+DEBUG - 2013-08-23 19:40:44 --> Helper loaded: form_helper
+DEBUG - 2013-08-23 19:40:44 --> Helper loaded: download_helper
+DEBUG - 2013-08-23 19:40:44 --> Helper loaded: file_helper
+DEBUG - 2013-08-23 19:40:44 --> Database Driver Class Initialized
+DEBUG - 2013-08-23 19:40:44 --> Native_session Class Initialized
+DEBUG - 2013-08-23 19:40:44 --> Form Validation Class Initialized
+DEBUG - 2013-08-23 19:40:45 --> Email Class Initialized
+DEBUG - 2013-08-23 19:40:45 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:40:45 --> Cart Class Initialized
+DEBUG - 2013-08-23 19:40:45 --> Controller Class Initialized
+DEBUG - 2013-08-23 19:40:45 --> Helper loaded: date_helper
+DEBUG - 2013-08-23 19:40:45 --> Helper loaded: text_helper
+DEBUG - 2013-08-23 19:40:45 --> Cart class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:40:45 --> Form_validation class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:40:45 --> Jquery Class Initialized
+DEBUG - 2013-08-23 19:40:45 --> Javascript Class Initialized and loaded.  Driver used: jquery
+DEBUG - 2013-08-23 19:40:46 --> Email class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:40:46 --> Pagination Class Initialized
+DEBUG - 2013-08-23 19:40:46 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:46 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:46 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:46 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:46 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:46 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:46 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:47 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:47 --> Model Class Initialized
+DEBUG - 2013-08-23 19:40:47 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-08-23 19:40:47 --> File loaded: application/views/web/header.php
+DEBUG - 2013-08-23 19:40:47 --> File loaded: application/views/web/categoria.php
+DEBUG - 2013-08-23 19:40:47 --> File loaded: application/views/web/footer.php
+DEBUG - 2013-08-23 19:40:47 --> Final output sent to browser
+DEBUG - 2013-08-23 19:40:47 --> Total execution time: 5.4433

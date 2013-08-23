@@ -203,11 +203,17 @@
     </div><!-- /# end post -->
 
 	<?php endforeach; ?>
+    </div>
+    </div>
+        
 
+</div><!-- /# end post -->
                 
 <div class="clearfix divider_line02"></div>
 
 </div>
+
+
 <div class="container_holder">
 	<div class="holder" style="text-align: center; float: right; height: 50px; width: 100%;"></div>
 </div>     
