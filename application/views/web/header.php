@@ -87,10 +87,13 @@
         	
         	<ul id="tiny">
                     
-                <li><a href="<?php echo base_url().'inicio/home'; ?>">Empresa</a></li>  
+                <li><a <?php if($this->uri->segment(2)=='home'): echo 'class = "activo"'; endif;?> href="<?php echo base_url().'inicio/home'; ?>">Empresa</a></li>  
     
-                <?php foreach($categoria as $cat): ?>
-                <li><a href="<?php echo base_url().'inicio/categoria/'.$cat->categoria_id.'/'.$cat->nombre; ?>"><?php echo $cat->nombre;?></a>
+    			
+    
+                <?php foreach($categoria as $cat): ?>          
+                
+                <li><a  <?php if ($cat->categoria_id == $categoria_id): echo 'class = "activo"'; endif; ?> href="<?php echo base_url().'inicio/categoria/'.$cat->categoria_id.'/'.$cat->nombre; ?>"><?php echo $cat->nombre;?></a>
                     <ul>
                     <?php foreach($subcategoria as $subcat): ?>
                     <?php if($cat->categoria_id == $subcat->categoria):?>
@@ -102,7 +105,7 @@
                  <?php endforeach; ?>
     
     
-                <li><a href="<?php echo base_url().'inicio/contacto'; ?>">Contacto</a></li>
+                <li><a <?php if($this->uri->segment(2)=='contacto'): echo 'class = "activo"'; endif;?> href="<?php echo base_url().'inicio/contacto'; ?>">Contacto</a></li>
             </ul>
           
 		</div>

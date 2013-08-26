@@ -35,6 +35,7 @@ class Inicio extends CI_Controller {
 		}//End Index
 		
 	public function home(){
+			$data['categoria_id'] = "home";
 			$data['categoria'] = $this->categoria_model->categoria();
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
 			$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
@@ -48,7 +49,7 @@ class Inicio extends CI_Controller {
 		
 	public function categoria($categoria_id, $nombre){
 			//consulta a la base de datos que te devuleva la categoria a la que pertenece el $subcategoria_id
-			
+			$data['categoria_id'] = $categoria_id;
 			$data['categoria'] = $this->categoria_model->categoria();
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
 			$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
@@ -79,24 +80,11 @@ class Inicio extends CI_Controller {
 		}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
 	public function listar_categoria($categoria_id, $subcategoria_id, $nombre_subcategoria){
 			$data['categoria'] = $this->categoria_model->categoria();
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
 			$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
+			$data['categoria_id'] = $categoria_id;
 			$data['nombre_subcategoria'] = $nombre_subcategoria;
 			$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
 			//$data['imagen_mid'] = $this->thumb_model->obtener_imagen_articulo();
@@ -120,7 +108,7 @@ class Inicio extends CI_Controller {
 	public function articulo($categoria_id, $subcategoria_id, $nombre_articulo, $articulo_id){
 			$data['categoria'] = $this->categoria_model->categoria();
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
-			
+			$data['categoria_id'] = $categoria_id;
 			$data['articulo_id'] = $articulo_id;
 			$data['articulo'] = $this->articulo_model->articulo();
 			$data['articulo_imagen'] = $this->thumb_model->obtener_imagenes($articulo_id);
@@ -138,6 +126,7 @@ class Inicio extends CI_Controller {
 		}//End home
 		
 	public function contacto(){
+			$data['categoria_id'] = "contacto";
 			$data['categoria'] = $this->categoria_model->categoria();
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
 			$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
@@ -153,6 +142,7 @@ class Inicio extends CI_Controller {
 	$data['categoria'] = $this->categoria_model->categoria();
 	$data['subcategoria'] = $this->subcategoria_model->subcategoria();
 	$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();	
+	$data['categoria_id'] = "contacto";
 
 	$this->form_validation->set_rules('name', 'Nombre', 'required'); //forma directa de crear reglas
 	$this->form_validation->set_rules('email', 'Correo electrónico', 'required'); //forma directa de crear reglas
@@ -202,7 +192,7 @@ class Inicio extends CI_Controller {
 	
 	
 	
-public function validar_formulario_articulo(){
+public function validar_formulario_articulo($categoria_id, $subcategoria_id, $nombre_articulo, $articulo_id){
 	
 	$data['categoria'] = $this->categoria_model->categoria();
 	$data['subcategoria'] = $this->subcategoria_model->subcategoria();
@@ -224,11 +214,12 @@ public function validar_formulario_articulo(){
 	$this->form_validation->set_rules('email', 'Correo electrónico', 'required'); //forma directa de crear reglas
 	$this->form_validation->set_rules('message', 'Consulta', 'required'); //forma directa de crear reglas
 	
+	
 	if ($this->form_validation->run() == FALSE):// hay algun error en la validacion
 		
 			$this->load->view('web/header', $data);
-            $this->load->view('web/home');
-            $this->load->view('web/footer');
+            $this->load->view('web/articulo', $data);
+            $this->load->view('web/footer', $data);
 	else:
 		
 		$this->load->library('email');
@@ -240,21 +231,23 @@ public function validar_formulario_articulo(){
 		
 		$this->email->subject('Correo de Prueba');
 		
-		$correo = "<html><head></head><body>Se ha realizado una consulta en la página web.\n";
-		$correo .= "Nombre: ".$this->input->post('name')."\nEmail de contacto: ".$this->input->post('email')."\nWeb: ".$this->input->post('website')."\nConsulta:\n".$this->input->post('message');
-		$correo .= "</body></html>";
+		$correo = "Un cliente desea obtener información sobre ".$this->input->post('articulo_nombre').'(ID: '.$this->input->post('articulo_id').')';
+		$correo .= "\n\nNombre: ".$this->input->post('name')."\nEmail de contacto: ".$this->input->post('email')."\n\nConsulta:\n".$this->input->post('message');
 		
 		$this->email->message($correo);	
 		
 		if($this->email->send()):
 			$data['msg'] = "Consulta enviada.";
 			$this->load->view('web/header', $data);
-       	 	$this->load->view('web/home');
-        	$this->load->view('web/footer');
+       	 	$this->load->view('web/articulo', $data);
+        	$this->load->view('web/footer', $data);
 		else:
+			echo $this->email->print_debugger();
+			exit;
+		
 			$data['msg'] = "Se ha producido un error al enviar la consulta.";
 			$this->load->view('web/header', $data);
-       	 	$this->load->view('web/home');
+       	 	$this->load->view('web/articulo', $data);
         	$this->load->view('web/footer', $data);
 		endif;
 		

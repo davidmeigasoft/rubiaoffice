@@ -188,7 +188,7 @@
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	width: 100%;
-	margin-top: 5px;
+	margin-top: 9px;
 	height: 40px;
 }
 #access .menu select {
@@ -384,7 +384,7 @@ box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 	position: fixed;
 	z-index: 999;
 	width: 1000px;
-	height: 90px;
+	height: 95px;
 	background-color: #fff;
 	-webkit-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 	box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.1);
@@ -2055,7 +2055,7 @@ ul.post_meta_links_small {
 
 .cuadricula_post{
 	width: 33%;
-	height:300px;
+	height:350px;
 }
 .cuadricula_postcontent_small{
 	width: 90%;

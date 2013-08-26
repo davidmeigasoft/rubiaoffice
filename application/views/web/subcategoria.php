@@ -3,7 +3,7 @@
 <div class="page_title">
 
 	<div class="container">
-		<div class="leaft_title"><h1><?php echo ucfirst(str_replace("%20", " ",$nombre_subcategoria));?></h1></div>
+		<div class="leaft_title"><h1><?php foreach ($datos_subcategoria as $row): echo ucfirst($row->nombre); endforeach;?></h1></div>
         
         
         

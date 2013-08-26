@@ -11,7 +11,7 @@
 
 	<div class="container">
 		<div class="leaft_title"><h1><?php foreach($datos_articulo as $row): ?>
-									 	<?php echo ucfirst($row->nombre); ?>
+									 	<?php echo ucfirst($row->articulo_nombre); ?>
 									 <?php endforeach;?>
                                      </h1></div>
         
@@ -26,7 +26,7 @@
 									<?php foreach($datos_subcategoria as $row): ?>
 									 	<a href="<?php echo base_url().'inicio/listar_categoria/'.$cat->categoria_id.'/'.$row->subcategoria_id.'/'.$row->nombre;?>"><?php echo ucfirst($row->nombre); ?></a>
 									 <?php endforeach;?></a><i>/</i><?php foreach($datos_articulo as $row): ?>
-									 	<?php echo ucfirst($row->nombre); ?>
+									 	<?php echo ucfirst($row->articulo_nombre); ?>
 									 <?php endforeach;?></div>
                                      
                                      
@@ -110,10 +110,15 @@
                 
                 <div class="project_details" style="margin-top: 40px;"> 
                 
-					<form name="form" method="post" class="form-horizontal" action="<?php echo base_url().'inicio/validar_formulario_articulo'; ?>">  
+                 <?php foreach($datos_articulo as $art): ?>
+                
+					<form name="form" method="post" class="form-horizontal" action="<?php echo base_url().'inicio/validar_formulario_articulo/'.$art->categoria_id.'/'.$art->subcategoria_id.'/'.$art->articulo_nombre.'/'.$art->articulo_id; ?>">  
                     
 					<h3 style ="padding-top: 40px; margin-bottom: -25px;">Solicitar información</h3>
-						<fieldset>
+                    	<fieldset>
+                        
+                        <input type="hidden" name="articulo_nombre" value="<?php echo $art->articulo_nombre; ?>"/>
+                    	<input type="hidden" name="articulo_id" value="<?php echo $art->articulo_id; ?>"/>
 						
 												
 						<label for="name" class="blocklabel">Su nombre*</label>
@@ -151,6 +156,8 @@
 						
 						</form> 
                 </div>
+                
+                <?php endforeach; ?>
                
             </div>
           </div>    
@@ -166,6 +173,12 @@
     $(window).load(function() {
         $('#slider').nivoSlider({controlNavThumbsFromRel:true, effect:'fade', manualAdvance:true});
     });
+	
+	
+	$(document).ready(function(){
+		$(".project_details span:last").css("margin-bottom", "40px");
+		});
+	
     </script>   
           
           <div class="clearfix divider_line02"></div>

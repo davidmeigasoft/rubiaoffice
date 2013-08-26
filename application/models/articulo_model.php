@@ -119,8 +119,11 @@ function count_articulos_categoria($id) // cuenta artículos para paginación
 
 function datos_articulo($articulo_id)
 	{
-	$this->db->select('*');
+	$this->db->select(
+	'articulo.nombre as articulo_nombre, articulo_id, color,articulo.desc as articulo_desc, fecha_alta,marca,medidas, precio, stock, subcategoria_id, unidades, url, categoria_id, subcategoria.nombre as subcategoria_nombre, categoria.nombre as categoria_nombre');
 	$this->db->from('articulo');
+	$this->db->join('subcategoria', 'subcategoria.subcategoria_id = articulo.subcategoria');
+	$this->db->join('categoria', 'categoria.categoria_id = subcategoria.categoria');
 	$this->db->where('articulo.articulo_id', $articulo_id);
 	
 	$query = $this->db->get();

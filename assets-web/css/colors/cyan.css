@@ -21,6 +21,11 @@ a:hover, a:focus {
 #access .menu ul li a:hover {
 	border-top: 4px solid #00bdbd;
 } 
+
+#access .menu ul li a.activo {
+	border-top: 4px solid #00bdbd;
+}
+
 #access .menu ul li a.active {
 	border-top: 4px solid #00bdbd;
 }

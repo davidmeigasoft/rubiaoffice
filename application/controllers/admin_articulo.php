@@ -40,6 +40,7 @@ class Admin_articulo extends CI_Controller {
 	if ($this->form_validation->run() == FALSE)// hay algun error en la validacion
 		{
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
+			$data['categoria'] = $this->categoria_model->categoria();
 			$this->load->view('admin/header');
             $this->load->view('admin/formulario_articulo', $data);
             $this->load->view('admin/footer');
@@ -48,6 +49,7 @@ class Admin_articulo extends CI_Controller {
 		{
 		if ($this->articulo_model->alta_articulo()== true){
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
+			$data['categoria'] = $this->categoria_model->categoria();
 			$data['error'] = "Ok, todo correcto";
             $this->load->view('admin/header');
             $this->load->view('admin/formulario_articulo', $data);
@@ -55,6 +57,7 @@ class Admin_articulo extends CI_Controller {
 			}
 		else{
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
+			$data['categoria'] = $this->categoria_model->categoria();
 			$data['error'] = "Ha ocurrido algún error con la consulta";
             $this->load->view('admin/header');
             $this->load->view('admin/formulario_articulo', $data);

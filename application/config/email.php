@@ -17,5 +17,5 @@ $config['smtp_pass'] = '8775Ntd55';
 $config['smtp_timeout'] = '7';
 $config['charset'] = 'utf-8';
 $config['newline'] = "\r\n";
-$config['mailtype'] = 'html'; // or html
+$config['mailtype'] = 'text'; // or html
 $config['validation'] = TRUE; // bool whether to validate email or not
