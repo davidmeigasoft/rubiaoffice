@@ -87,7 +87,13 @@ Supports Thumbs: true
 	margin-bottom: 5px;
 }
 .theme-default .nivo-controlNav.nivo-thumbs-enabled img {
+	
 	display: block;
 	width: 120px;
 	height: auto;
 }
+
+a img
+	{
+		margin-left: 55px;
+	}

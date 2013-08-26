@@ -115,20 +115,20 @@ ul.socials_home_links {
 
 .top_section {
 	width: 727px;
-	height: 90px;
+	height: 95px;
 }
 #access .menu {
-	width: 450px;
+	width: 100%;
 }
 
 #access .menu ul li a {
-	padding: 36px 6px 36px 6px;
+	padding: 12px 5px 12px 5px;
 }
 #access .menu ul li a:hover {
-	padding: 36px 6px 36px 6px;
+	padding: 12px 5px 12px 5px;
 } 
 #access .menu ul li a.active {
-	padding: 36px 6px 36px 6px;
+	padding: 12px 5px 12px 5px;
 }
 
 .features_section .box_one h4 {
@@ -333,10 +333,10 @@ ul.socials_home_links {
 }
 
 .page_title .leaft_title {
-	width: 60%;
+	width: 55%;
 }
 .page_title .reght_pagenation {
-	width: 36%;
+	width: 45%;
 }
 
 .lirc_section li.right {
@@ -397,8 +397,28 @@ ul.socials_home_links {
 .post_info_content_small h3 {
 	font-size: 18px;
 	float: left;
-	width: 70%;
+	width: 100%;
 }
+
+.post_info_content_small p /*Oculta descripción*/
+	{
+	display: none;
+	}
+
+/*LISTADO EN CUADRÍCULA*/
+
+.cuadricula_post{
+	width: 30%;
+	height:220px;
+	margin: 2px;
+}
+.cuadricula_postcontent_small{
+	width: 90%;
+}
+.cuadricula_info_small{
+	width: 90%;
+}
+
 ul.post_meta_links_small {
 	float: left;
 	margin: -15px 0px 12px 70px;
@@ -499,6 +519,17 @@ ul.post_meta_links_small {
 
 @media only screen and (min-width: 480px) and (max-width: 767px){
 
+
+#opciones_visualizacion{
+	display: none;
+	}
+
+
+#access .menu {
+border-top: 0px solid #fff;
+}
+
+
 .holder {
 	clear:both;
 	padding:10px 0;
@@ -518,7 +549,7 @@ ul.post_meta_links_small {
 	color: #454545;
 	float: left;
 	width: 234px;
-	margin: -45px 20px 0px 0px;
+	margin: 0px 120px 0px 0px;
 	float: right;
 }
 
@@ -678,7 +709,7 @@ ul.post_meta_links_small {
 
 .top_section {
 	width: 468px;
-	height: 90px;
+	height: 95px;
 	margin-left: -20px;
 }
 #access .menu {
@@ -1253,6 +1284,31 @@ ul.adsbanner-list {
 
 
 @media only screen and (max-width: 479px){
+	
+	
+#opciones_visualizacion{
+	display: none;
+	}
+
+
+
+#access .menu {
+border-top: 0px solid #fff;
+	}
+
+
+
+.logo_innerpage h1 {
+	margin-left: -10px;
+	}
+
+#subtitulo
+	{
+	float: left;
+	padding-left: 0px;
+	margin-top: 10px;
+	margin-left: 55px;
+	}
 
 .holder {
 	clear:both;
@@ -1273,7 +1329,7 @@ ul.adsbanner-list {
 	color: #454545;
 	float: left;
 	width: 234px;
-	margin: 10px 35px 0px 0px;
+	margin: 25px 35px 0px 0px;
 	float: right;
 }
 
@@ -1789,10 +1845,13 @@ ul.fullimage_box.last {
 	margin: 0px;
 }
 .page_title .reght_pagenation {
+	display: none;
+	/*
 	width: 100%;
 	margin: 0px 0 0 0px;
 	padding: 2px 0 0px 0px;
 	text-align: left;
+	*/
 }
 
 .lirc_section li.left.two {
