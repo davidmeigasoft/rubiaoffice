@@ -344,7 +344,15 @@ Condiciones del servicio | Politica de privacidad
     </script>
 
 
+    <script> // Cerrar cuadros de mensaje de envío de formulario
+		
+	$(document).ready(function(){
+		$(".close-but").click(function(){
+			$(".alert").css("display","none");
+			});
+		});
 
+    </script>
 
 <!-- nivo-slider -->
 <script type="text/javascript">/*

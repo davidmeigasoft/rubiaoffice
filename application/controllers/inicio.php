@@ -69,6 +69,7 @@ class Inicio extends CI_Controller {
 		{
 			$data['categoria'] = $this->categoria_model->categoria();
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
+
 			$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
 			$data['listado_articulos_categoria'] = $this->articulo_model->articulos_categoria_orden($categoria_id, $ordenacion);
 			$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
@@ -197,7 +198,7 @@ public function validar_formulario_articulo($categoria_id, $subcategoria_id, $no
 	$data['categoria'] = $this->categoria_model->categoria();
 	$data['subcategoria'] = $this->subcategoria_model->subcategoria();
 	$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();	
-	
+	$data['categoria_id'] = $categoria_id;
 	
 	$data['articulo_id'] = $articulo_id;
 	$data['articulo'] = $this->articulo_model->articulo();
@@ -264,6 +265,7 @@ public function ordenar_articulos_categoria($categoria_id)
 	{
 	$data['categoria'] = $this->categoria_model->categoria();
 	$data['subcategoria'] = $this->subcategoria_model->subcategoria();
+	$data['categoria_id'] = $categoria_id;
 	$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();	
 	$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
 	
@@ -283,6 +285,7 @@ public function ordenar_articulos_subcategoria($categoria_id, $subcategoria_id, 
 {
 	$data['categoria'] = $this->categoria_model->categoria();
 	$data['subcategoria'] = $this->subcategoria_model->subcategoria();
+	$data['categoria_id'] = $categoria_id;
 	$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
 	$data['nombre_subcategoria'] = $nombre_subcategoria;
 	$data['datos_subcategoria'] = $this->subcategoria_model->datos_subcategoria($subcategoria_id);

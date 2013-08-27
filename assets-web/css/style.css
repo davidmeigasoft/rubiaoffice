@@ -298,6 +298,31 @@
 .selectnav {display: none; width: 440px; margin-left: 20px;}
 
 
+/*------------------*/
+/*	BOTÓN ENVIAR FORMULARIO
+/*------------------------------------------------------*/
+.boton_formulario
+	{
+	height: 24px;
+	width: 75px;
+	margin: 3px;
+	text-align:center;
+	
+	background-color: #CCC;
+	border: solid 1px #BBB;
+	border-radius: 2px;
+	
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+	}
+	
+.boton_formulario:hover
+	{
+	cursor: pointer;
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+	background-color: #EEE;
+	}
 
 
 /*------------------*/
@@ -1696,6 +1721,7 @@ ul.socials_home_links {
 }
 
 .project_details {
+	width: 400px;
 	padding: 0px;
 	margin: 0px 0px 0px 0px;
 }
@@ -3535,6 +3561,12 @@ p.error {
 	background: url(../images/elements/icon-remove.png) no-repeat center top;
 }
 
+.alert
+	{
+	background-color: #D9F4C6;
+	padding: 7px 10px 7px 10px;
+	border-radius: 5px;
+	}
 
 /* tables */
 

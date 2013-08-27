@@ -94,7 +94,7 @@
 						<input type="hidden" id="myemail" name="myemail" value="gsrthemes9@gmail.com" />
 						<input type="hidden" id="myblogname" name="myblogname" value="yourcompanyname.com" />
 						<div class="clearfix"></div>
-						<input name="Send" type="submit" value="Enviar" class="button medium align" id="send"/></p>
+						<input name="Send" type="submit" value="Enviar" class="boton_formulario" id="send"/></p>
 								
 
 						<?php if (validation_errors() == true): ?>
@@ -111,7 +111,7 @@
                        
                        if(isset($msg)): ?>
                             <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <button type="button" class="close-but" data-dismiss="alert">&times;</button>
                             <?php echo $msg; ?>
                             </div>
                         <?php endif; ?>

@@ -50,7 +50,7 @@
     
     <div class="sidebar_widget">
     
-    	<div class="sidebar_title"><h3>Articulos recientes</h3></div>
+    	<div class="sidebar_title"><h3>Artículos recientes</h3></div>
         
 			<ul class="recent_posts_list">
         
@@ -149,6 +149,7 @@
         <form id="ordenacion"  name="ordenar" action="<?php echo base_url().'inicio/ordenar_articulos_subcategoria/'.$row->categoria.'/'.$row->subcategoria_id.'/'.$row->nombre; ?>" method="post"> 
         
         <select onchange="this.form.submit()" name="ordenar" type="submit">
+        	<option selected value="">Opciones de ordenación</option>
         	<option value="az">Orden alfabético A-Z</option>
             <option value="za">Orden alfabético Z-A</option>
             <option value="caros">Más caros</option>

@@ -519,7 +519,6 @@ ul.post_meta_links_small {
 
 @media only screen and (min-width: 480px) and (max-width: 767px){
 
-
 #opciones_visualizacion{
 	display: none;
 	}
@@ -1010,10 +1009,11 @@ ul.clients_logos_list2 {
 }
 
 .page_title .leaft_title {
-	width: 48%;
+	width: 100%;
 }
 .page_title .reght_pagenation {
 	width: 48%;
+	display: none;
 }
 
 .lirc_section li.left.two {
@@ -1290,7 +1290,10 @@ ul.adsbanner-list {
 	display: none;
 	}
 
-
+.sub_footer
+	{
+	display: none;
+	}
 
 #access .menu {
 border-top: 0px solid #fff;
@@ -1415,10 +1418,10 @@ border-top: 0px solid #fff;
 	margin-left: 0px;
 }
 #logo {
-	width: 150px;
+	width: 200px;
 }
 #site_menu {
-	width: 150px;
+	width: 200px;
 }
 
 .logo_innerpage {

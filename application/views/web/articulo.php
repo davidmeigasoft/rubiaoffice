@@ -114,7 +114,7 @@
                 
 					<form name="form" method="post" class="form-horizontal" action="<?php echo base_url().'inicio/validar_formulario_articulo/'.$art->categoria_id.'/'.$art->subcategoria_id.'/'.$art->articulo_nombre.'/'.$art->articulo_id; ?>">  
                     
-					<h3 style ="padding-top: 40px; margin-bottom: -25px;">Solicitar información</h3>
+					<h3>Solicitar información</h3>
                     	<fieldset>
                         
                         <input type="hidden" name="articulo_nombre" value="<?php echo $art->articulo_nombre; ?>"/>
@@ -131,7 +131,7 @@
 						<p class=""><textarea name="message" class="textarea_bg" id="message" cols="10" rows="3" ></textarea></p>
 						<p>
 						<div class="clearfix"></div>
-						<input name="Send" type="submit" value="Enviar" class="button medium align" id="send"/></p>
+						<input name="Send" type="submit" value="Enviar" class="boton_formulario" id="send"/></p>
 								
 						<?php if (validation_errors() == true): ?>
                         <br/>
@@ -147,7 +147,7 @@
                        
                        if(isset($msg)): ?>
                             <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <button type="button" class="close-but" data-dismiss="alert">&times;</button>
                             <?php echo $msg; ?>
                             </div>
                         <?php endif; ?>
@@ -155,9 +155,15 @@
 						</fieldset>
 						
 						</form> 
+                
+
+                        
                 </div>
                 
                 <?php endforeach; ?>
+
+               
+               
                
             </div>
           </div>    
