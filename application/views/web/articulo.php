@@ -17,20 +17,24 @@
         
         
         
-        <div class="reght_pagenation"><a href="<?php echo base_url().'inicio/home'; ?>">Empresa</a> <i>/</i> <a href="<?php echo base_url(); ?>">				<?php foreach($datos_categoria as $cat):?>
-                
-        <a href="<?php echo base_url().'inicio/categoria/'.$cat->categoria_id.'/'.$cat->nombre;?>">
-        <?php echo ucfirst($cat->nombre); ?>
+        <div class="reght_pagenation"><a href="<?php echo base_url().'inicio/home'; ?>">Inicio</a> <i>/</i> <a href="<?php echo base_url(); ?>">	</a>			
+		
+		<?php foreach($datos_articulo as $row):?>
+
+
+       <a href="<?php echo base_url().'inicio/categoria/'.$row->categoria_id.'/'.$row->categoria_nombre;?>"><?php echo ucfirst($row->categoria_nombre); ?>
         </a><i>/</i>
         
-									<?php foreach($datos_subcategoria as $row): ?>
-									 	<a href="<?php echo base_url().'inicio/listar_categoria/'.$cat->categoria_id.'/'.$row->subcategoria_id.'/'.$row->nombre;?>"><?php echo ucfirst($row->nombre); ?></a>
-									 <?php endforeach;?></a><i>/</i><?php foreach($datos_articulo as $row): ?>
-									 	<?php echo ucfirst($row->articulo_nombre); ?>
-									 <?php endforeach;?></div>
+									
+		<a href="<?php echo base_url().'inicio/subcategoria/'.$row->subcategoria_id.'/'.$row->subcategoria_nombre;?>"><?php echo ucfirst($row->subcategoria_nombre); ?></a>
+		</a><i>/</i>
+		
+        <?php echo ucfirst($row->articulo_nombre); ?>
+        
+        
+		</div>                          
                                      
-                                     
-                                 <?php endforeach;?>
+        <?php endforeach;?>
 	</div>
 </div><!-- end page title --> 
 
@@ -45,14 +49,14 @@
             <div class="portfolio_area_left">
 
                <?php if($numero_imagenes == 0): ?> 	
-                        	<img src="<?php echo base_url().'uploads/articulo/noimage.png'?>" alt="" data-transition="slideInLeft" />
+                        	<img src="<?php echo base_url().'uploads/articulo/noimage.png'?>" alt="No hay imagen disponible" data-transition="slideInLeft" />
                 <?php else: ?>  
                    <div class="slider-wrapper theme-default">
                    <div id="slider" class="nivoSlider">
                      <?php foreach($articulo_imagen as $row): ?>
                         
                     		
-                       			<img src="<?php echo base_url().'uploads/articulo/large/'.$row->file_name; ?>" data-thumb="<?php echo base_url().'uploads/articulo/small/'.$row->file_name; ?>" alt="" data-transition="slideInLeft" /> 
+                       			<img src="<?php echo base_url().'uploads/articulo/large/'.$row->file_name; ?>" data-thumb="<?php echo base_url().'uploads/articulo/small/'.$row->file_name; ?>" alt="Imagen del producto" data-transition="slideInLeft" /> 
                             
                    		
 						
@@ -62,18 +66,17 @@
                 </div>           
 
             <div class="portfolio_area_right">
-                <?php foreach($articulo as $art):?>
-					<?php if(($art->articulo_id == $articulo_id) && ($art->desc != "")):
+                <?php foreach($datos_articulo as $art):?>
+					<?php if($art->articulo_desc != ""):
 							echo "<h3>Descripción</h3><p>";
-							echo $art->desc; 
+							echo $art->articulo_desc; 
 							echo "</p>";
 						endif;
                 endforeach;?>
                 
                 <div class="project_details"> 
                 	<h3>Detalles</h3>
-                    <?php foreach($articulo as $art): ?>
-                    	<?php if($art->articulo_id == $articulo_id): ?>
+                    <?php foreach($datos_articulo as $art): ?>
                             <?php if($art->marca != ''): 
 								echo '<span><strong>Marca</strong><i>'.$art->marca.'</i></span>';
 							endif;?>
@@ -102,7 +105,6 @@
 								echo '<span><i><a href="'.$art->url.'">Más información</a></i></span>';
 							endif;?>
                             
-                    	<?php endif; ?>
                     <?php endforeach; ?>
                     
      			  </div>
@@ -112,7 +114,7 @@
                 
                  <?php foreach($datos_articulo as $art): ?>
                 
-					<form name="form" method="post" class="form-horizontal" action="<?php echo base_url().'inicio/validar_formulario_articulo/'.$art->categoria_id.'/'.$art->subcategoria_id.'/'.$art->articulo_nombre.'/'.$art->articulo_id; ?>">  
+					<form name="form" method="post" class="form-horizontal" action="<?php echo base_url().'inicio/validar_formulario_articulo/'.$art->articulo_id.'/'.$art->articulo_nombre; ?>">  
                     
 					<h3>Solicitar información</h3>
                     	<fieldset>

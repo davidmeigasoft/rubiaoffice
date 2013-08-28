@@ -4,7 +4,7 @@
 
 	<div class="container">
 		<div class="leaft_title"><h1><?php// echo ucfirst(str_replace("%20", " ",$nombre_categoria));?></h1></div>
-        <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Empresa</a><i>/</i> 
+        <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Inicio</a><i>/</i> 
         
         <?php foreach($datos_categoria as $row): ?>
         	<?php echo ucfirst($row->nombre);?>
@@ -35,7 +35,7 @@
 
         	<?php foreach($menu as $subcat): ?>
           
-						<li><a href="<?php echo base_url().'inicio/listar_categoria/'.$subcat->categoria.'/'.$subcat->subcategoria_id.'/'.$subcat->nombre; ?>"><?php echo ucfirst($subcat->nombre); ?></a></li>
+						<li><a href="<?php echo base_url().'inicio/subcategoria/'.$subcat->subcategoria_id.'/'.$subcat->nombre; ?>"><?php echo ucfirst($subcat->nombre); ?></a></li>
                 
             <?php endforeach;?>
 		</ul>
@@ -163,7 +163,7 @@
             <div class="image_frame small">
              <?php if($row->url != ""): ?>
             
-            <a href="http://<?php echo $row->url; ?>" target="_blank"> <img src="<?php echo base_url().'uploads/articulo/link_mid.png';?> "/>		
+            <a href="http://<?php echo $row->url; ?>" target="_blank"> <img src="<?php echo base_url().'uploads/articulo/link_mid.png';?>" alt="Enlace externo"/>		
             
             </div>
             <div class="post_info_content_small">
@@ -177,19 +177,19 @@
             
             
 				<?php if($row->file_name != ""): ?>
-                	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
-                    <img src="<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?> "/>
+                	<a href="<?php echo base_url().'inicio/articulo/'.$row->articulo_id.'/'.$row->articulo_nombre;?>">
+                    <img src="<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?>" alt="Imagen de artículo"/>
                     </a>
                 <?php else: ?>
                 
-                	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
-                    <img src="<?php echo base_url().'uploads/articulo/noimage_min.png';?> "/>
+                	<a href="<?php echo base_url().'inicio/articulo/'.$row->articulo_id.'/'.$row->articulo_nombre;?>">
+                    <img src="<?php echo base_url().'uploads/articulo/noimage_min.png';?>" alt="Imagen del artículo"/>
                     </a>
                 <?php endif;?>
                 </div>
                 
                 <div class="post_info_content_small">
-                <h3><a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></h3>
+                <h3><a href="<?php echo base_url().'inicio/articulo/'.$row->articulo_id.'/'.$row->articulo_nombre;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></h3>
                 
                 <div class="clearfix"></div>
                 

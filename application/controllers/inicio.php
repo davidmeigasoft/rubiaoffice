@@ -49,7 +49,7 @@ class Inicio extends CI_Controller {
 		
 	public function categoria($categoria_id, $nombre){
 			//consulta a la base de datos que te devuleva la categoria a la que pertenece el $subcategoria_id
-			$data['categoria_id'] = $categoria_id;
+			$data['categoria_id'] = $this->categoria_model->obtiene_categoria($categoria_id);
 			$data['categoria'] = $this->categoria_model->categoria();
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
 			$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
@@ -81,50 +81,45 @@ class Inicio extends CI_Controller {
 		}
 	
 	
-	public function listar_categoria($categoria_id, $subcategoria_id, $nombre_subcategoria){
+	public function subcategoria($subcategoria_id, $nombre_subcategoria){
 			$data['categoria'] = $this->categoria_model->categoria();
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
-			$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
-			$data['categoria_id'] = $categoria_id;
-			$data['nombre_subcategoria'] = $nombre_subcategoria;
-			$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
-			//$data['imagen_mid'] = $this->thumb_model->obtener_imagen_articulo();
+			$data['categoria_id'] = $this->categoria_model->obtiene_categoria_subcategoria($subcategoria_id);
+			$data['menu'] = $this->subcategoria_model->obtiene_subcategorias_categoria($subcategoria_id);
+			$data['datos_subcategoria'] = $this->subcategoria_model->datos_categoria_subcategoria($subcategoria_id);
 			$data['listado_articulos'] = $this->articulo_model->lista_articulos_sub($subcategoria_id);
-			$data['datos_subcategoria'] = $this->subcategoria_model->datos_subcategoria($subcategoria_id);
-			//print_r($data['imagen_mid']);
-			//exit;
-			$data['articulo'] = $this->articulo_model->articulo();
+			
 			$data['ultimos_articulos_sub'] = $this->articulo_model->lista_ultimos_articulos_sub($subcategoria_id);
-			$data['numero_imagenes'] = $this->articulo_model->obtener_numero_imagenes_subcat($subcategoria_id);
-			//$data['menu_categoria'] = $this->categoria_model->categoria_por_id($categoria_id);
 			$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
 			
-			
+			//$data['menu_categoria'] = $this->categoria_model->categoria_por_id($categoria_id);
+			//$data['datos_subcategoria'] = $this->subcategoria_model->datos_subcategoria($subcategoria_id);
+			//$data['imagen_mid'] = $this->thumb_model->obtener_imagen_articulo();
+			//$data['nombre_subcategoria'] = $nombre_subcategoria;
+			//$data['articulo'] = $this->articulo_model->articulo();
+			//$data['numero_imagenes'] = $this->articulo_model->obtener_numero_imagenes_subcat($subcategoria_id);
+
 			$this->load->view('web/header', $data);
 			$this->load->view('web/subcategoria',$data);
 			$this->load->view('web/footer', $data);
 		}
 
 		
-	public function articulo($categoria_id, $subcategoria_id, $nombre_articulo, $articulo_id){
+	public function articulo($articulo_id, $nombre_articulo){
 			$data['categoria'] = $this->categoria_model->categoria();
 			$data['subcategoria'] = $this->subcategoria_model->subcategoria();
-			$data['categoria_id'] = $categoria_id;
+			$data['categoria_id'] = $this->categoria_model->obtiene_categoria_articulo($articulo_id);
+			
 			$data['articulo_id'] = $articulo_id;
-			$data['articulo'] = $this->articulo_model->articulo();
 			$data['articulo_imagen'] = $this->thumb_model->obtener_imagenes($articulo_id);
-			
 			$data['numero_imagenes'] = $this->articulo_model->obtener_numero_imagenes($articulo_id);
-			
-			$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
-			$data['datos_subcategoria'] = $this->subcategoria_model->datos_subcategoria($subcategoria_id);
 			$data['datos_articulo'] = $this->articulo_model->datos_articulo($articulo_id);
 			$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
 		
 			$this->load->view('web/header', $data);
 			$this->load->view('web/articulo', $data);
 			$this->load->view('web/footer', $data);
-		}//End home
+		}//End articulo
 		
 	public function contacto(){
 			$data['categoria_id'] = "contacto";
@@ -135,7 +130,7 @@ class Inicio extends CI_Controller {
 			$this->load->view('web/header', $data);
 			$this->load->view('web/contacto');
 			$this->load->view('web/footer', $data);
-		}//End home
+		}//End contacto
 		
 		
 	public function validar_formulario(){
@@ -193,23 +188,19 @@ class Inicio extends CI_Controller {
 	
 	
 	
-public function validar_formulario_articulo($categoria_id, $subcategoria_id, $nombre_articulo, $articulo_id){
+public function validar_formulario_articulo($articulo_id, $nombre_articulo){
 	
 	$data['categoria'] = $this->categoria_model->categoria();
 	$data['subcategoria'] = $this->subcategoria_model->subcategoria();
-	$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();	
-	$data['categoria_id'] = $categoria_id;
+	$data['categoria_id'] = $this->categoria_model->obtiene_categoria_articulo($articulo_id);
 	
 	$data['articulo_id'] = $articulo_id;
-	$data['articulo'] = $this->articulo_model->articulo();
 	$data['articulo_imagen'] = $this->thumb_model->obtener_imagenes($articulo_id);
-	
 	$data['numero_imagenes'] = $this->articulo_model->obtener_numero_imagenes($articulo_id);
-	
-	$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
-	$data['datos_subcategoria'] = $this->subcategoria_model->datos_subcategoria($subcategoria_id);
 	$data['datos_articulo'] = $this->articulo_model->datos_articulo($articulo_id);
-
+	$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
+	
+	//$data['articulo'] = $this->articulo_model->articulo();
 
 	$this->form_validation->set_rules('name', 'Nombre', 'required'); //forma directa de crear reglas
 	$this->form_validation->set_rules('email', 'Correo electrónico', 'required'); //forma directa de crear reglas
@@ -263,14 +254,14 @@ public function validar_formulario_articulo($categoria_id, $subcategoria_id, $no
 	
 public function ordenar_articulos_categoria($categoria_id)
 	{
+	$data['categoria_id'] = $this->categoria_model->obtiene_categoria($categoria_id);
 	$data['categoria'] = $this->categoria_model->categoria();
 	$data['subcategoria'] = $this->subcategoria_model->subcategoria();
-	$data['categoria_id'] = $categoria_id;
-	$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();	
 	$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
+	$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
+	$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();	
 	
 	$ordenacion = $this->input->post('ordenar');
-	
 	$data['listado_articulos_categoria'] = $this->articulo_model->articulos_categoria_orden($categoria_id, $ordenacion);
 	
 	$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
@@ -285,25 +276,17 @@ public function ordenar_articulos_subcategoria($categoria_id, $subcategoria_id, 
 {
 	$data['categoria'] = $this->categoria_model->categoria();
 	$data['subcategoria'] = $this->subcategoria_model->subcategoria();
-	$data['categoria_id'] = $categoria_id;
-	$data['menu'] = $this->categoria_model->categoria_por_id($categoria_id);
-	$data['nombre_subcategoria'] = $nombre_subcategoria;
-	$data['datos_subcategoria'] = $this->subcategoria_model->datos_subcategoria($subcategoria_id);
-	$data['datos_categoria'] = $this->categoria_model->datos_categoria($categoria_id);
-	//$data['imagen_mid'] = $this->thumb_model->obtener_imagen_articulo();
+	$data['categoria_id'] = $this->categoria_model->obtiene_categoria_subcategoria($subcategoria_id);
+	$data['menu'] = $this->subcategoria_model->obtiene_subcategorias_categoria($subcategoria_id);
+	$data['datos_subcategoria'] = $this->subcategoria_model->datos_categoria_subcategoria($subcategoria_id);
 	
 	$ordenacion = $this->input->post('ordenar');
-	
 	$data['listado_articulos'] = $this->articulo_model->articulos_subcategoria_orden($subcategoria_id, $ordenacion);
-
-	$data['articulo'] = $this->articulo_model->articulo();
+	
 	$data['ultimos_articulos_sub'] = $this->articulo_model->lista_ultimos_articulos_sub($subcategoria_id);
-	$data['numero_imagenes'] = $this->articulo_model->obtener_numero_imagenes_subcat($subcategoria_id);
-	//$data['menu_categoria'] = $this->categoria_model->categoria_por_id($categoria_id);
 	$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
-	
-	$data['pagination'] =  $this->pagination->create_links(); 
-	
+
+
 	$this->load->view('web/header', $data);
 	$this->load->view('web/subcategoria',$data);
 	$this->load->view('web/footer', $data);

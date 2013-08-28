@@ -17,7 +17,7 @@
                 
                 <li class="ultimos_productos">
                     
-                	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
+                	<a href="<?php echo base_url().'inicio/articulo/'.$row->articulo_id.'/'.$row->articulo_nombre;?>">
                     
                     
                     <?php if($row->file_name != ""): ?>
@@ -30,7 +30,7 @@
                     <?php endif; ?>
                     </a>
                     
-                    <span class="title"><a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></span>
+                    <span class="title"><a href="<?php echo base_url().'inicio/articulo/'.$row->articulo_id.'/'.$row->articulo_nombre;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></span>
                     
                 </li>
                 

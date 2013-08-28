@@ -3,19 +3,19 @@
 <div class="page_title">
 
 	<div class="container">
-		<div class="leaft_title"><h1><?php foreach ($datos_subcategoria as $row): echo ucfirst($row->nombre); endforeach;?></h1></div>
+		<div class="leaft_title"><h1><?php foreach ($datos_subcategoria as $row): echo ucfirst($row->nombre_sub); endforeach;?></h1></div>
         
         
         
-        <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Home</a><i>/</i>
+        <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Inicio</a><i>/</i>
         
-         <?php foreach ($datos_categoria as $row):?>
-        <a href="<?php echo base_url().'inicio/categoria/'.$row->categoria_id.'/'.$row->nombre;?>">
-        <?php echo ucfirst($row->nombre); endforeach; ?>
+         <?php foreach ($datos_subcategoria as $row):?>
+        <a href="<?php echo base_url().'inicio/categoria/'.$row->categoria_id.'/'.$row->nombre_cat;?>">
+        <?php echo ucfirst($row->nombre_cat); endforeach; ?>
         </a>
         
         <i>/</i>
-		<?php foreach ($datos_subcategoria as $row): echo ucfirst($row->nombre); endforeach; ?>
+		<?php foreach ($datos_subcategoria as $row): echo ucfirst($row->nombre_sub); endforeach; ?>
         </div>
        
 	</div>
@@ -31,16 +31,16 @@
 
 	<div class="sidebar_widget">
     	<div class="sidebar_title">
-		<?php foreach($datos_categoria as $row):?>
-        	<h3><?php echo ucfirst($row->nombre) ?></h3>
+		<?php foreach($datos_subcategoria as $row):?>
+        	<h3><?php echo ucfirst($row->nombre_cat) ?></h3>
 		<?php endforeach; ?>
         </div>
         
 		<ul class="arrows_list1">		
 
-        	<?php foreach($menu as $subcat): ?>
+        	<?php foreach($menu as $row): ?>
           
-				<li><a href="<?php echo base_url().'inicio/listar_categoria/'.$subcat->categoria.'/'.$subcat->subcategoria_id.'/'.$subcat->nombre; ?>"><?php echo ucfirst($subcat->nombre); ?></a></li>
+				<li><a href="<?php echo base_url().'inicio/subcategoria/'.$row->subcategoria_id.'/'.$row->nombre_subcat; ?>"><?php echo ucfirst($row->nombre_subcat); ?></a></li>
                 
             <?php endforeach;?>
 		</ul>
@@ -74,20 +74,20 @@
 
 
 	<?php foreach($ultimos_articulos_sub as $row): ?>
-    	<li><span><a href="#">
+    	<li><span><a href="<?php echo base_url().'inicio/articulo/'.$row->articulo_id.'/'.$row->articulo_nombre;?>">
         
         <?php if($row->file_name != ""): ?>
-        <img src="<?php echo base_url();?>/image.php?width=50px&amp;cropratio=1:1&amp;image=<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?>"  alt="" />
+        <img src="<?php echo base_url();?>/image.php?width=50px&amp;cropratio=1:1&amp;image=<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?>"  alt="Imagen en miniatura del artículo" />
         <?php else: ?>
         
         <?php if($row->file_name == "" && $row->url != ""): ?>
-        <img src="<?php echo base_url().'uploads/articulo/link_small.png';?> "/>
+        <img src="<?php echo base_url().'uploads/articulo/link_small.png';?>" alt="Enlace externo"/>
         <?php else: ?>
         
-        <img src="<?php echo base_url();?>/image.php?width=50px&amp;cropratio=1:1&amp;image=<?php echo base_url().'uploads/articulo/noimage_small.png'; ?>"  alt="" />
+        <img src="<?php echo base_url();?>/image.php?width=50px&amp;cropratio=1:1&amp;image=<?php echo base_url().'uploads/articulo/noimage_small.png'; ?>"  alt="Imagen no disponible" />
         <?php endif; endif; ?>
         </a></span>
-         <a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>"> <?php echo $row->articulo_nombre; ?></a>
+         <a href="<?php echo base_url().'inicio/articulo/'.$row->articulo_id.'/'.$row->articulo_nombre;?>"> <?php echo $row->articulo_nombre; ?></a>
               <i><?php echo word_limiter($row->articulo_desc, 10); ?></i>
         </li>
         
@@ -146,7 +146,7 @@
     
     	 <div class="estilo_select">
          <?php foreach($datos_subcategoria as $row):?> 
-        <form id="ordenacion"  name="ordenar" action="<?php echo base_url().'inicio/ordenar_articulos_subcategoria/'.$row->categoria.'/'.$row->subcategoria_id.'/'.$row->nombre; ?>" method="post"> 
+        <form id="ordenacion"  name="ordenar" action="<?php echo base_url().'inicio/ordenar_articulos_subcategoria/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->nombre_sub; ?>" method="post"> 
         
         <select onchange="this.form.submit()" name="ordenar" type="submit">
         	<option selected value="">Opciones de ordenación</option>
@@ -175,7 +175,7 @@
             
             <?php if($row->url != ""): ?>
             
-            <a href="http://<?php echo $row->url; ?>" target="_blank"> <img src="<?php echo base_url().'uploads/articulo/link_mid.png';?> "/>		
+            <a href="http://<?php echo $row->url; ?>" target="_blank"> <img src="<?php echo base_url().'uploads/articulo/link_mid.png';?> " alt="Enlace externo"/>		
             
             </div>
             <div class="post_info_content_small">
@@ -190,18 +190,18 @@
             
 				<?php if($row->file_name != ""): ?>
                 	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
-                    <img src="<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?> "/>
+                    <img src="<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?>" alt="Imagen de artículo"/>
                     </a>
                 <?php else: ?>
                 
                 	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
-                    <img src="<?php echo base_url().'uploads/articulo/noimage_min.png';?> "/>
+                    <img src="<?php echo base_url().'uploads/articulo/noimage_min.png';?>" alt="Imagen de artículo"/>
                     </a>
                 <?php endif;?>
                 </div>
                 
                 <div class="post_info_content_small">
-                <h3><a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.urldecode($row->articulo_nombre).'/'.$row->articulo_id;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></h3>
+                <h3><a href="<?php echo base_url().'inicio/articulo/'.$row->articulo_id.'/'.$row->articulo_nombre;?>"><?php echo ucfirst($row->articulo_nombre); ?></a></h3>
                 
                 <div class="clearfix"></div>
                 

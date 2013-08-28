@@ -29,6 +29,8 @@ function categoria_por_id($categoria_id){
 	$query = $this->db->get();
 	return $query->result();
 	}
+	
+
 
 function alta_categoria()
 {
@@ -70,6 +72,59 @@ function datos_categoria($id_categoria)
 	$query = $this->db->get();
 	return $query->result();
 	}
+
+
+function obtiene_categoria($categoria_id) //devuelve ID de la categoria
+	{
+	$this->db->select('categoria_id');
+	$this->db->from('categoria');
+	$this->db->where('categoria_id', $categoria_id);
+	
+	$query = $this->db->get();
+	return $query->row(); 
+	}
+
+function obtiene_categoria_subcategoria($subcategoria_id) //devuelve ID de la categoria de una subcategoria
+	{
+	$this->db->select('categoria_id');
+	$this->db->from('subcategoria');
+	$this->db->join('categoria', 'categoria.categoria_id = subcategoria.categoria');
+	$this->db->where('subcategoria_id', $subcategoria_id);
+	
+	$query = $this->db->get();
+	return $query->row(); 
+	}
+
+function obtiene_categoria_articulo($articulo_id)  //devuelve ID de la categoria de un artículo
+	{
+	$this->db->select('categoria_id');
+	$this->db->from('subcategoria');
+	$this->db->join('articulo', 'articulo.subcategoria = subcategoria.subcategoria_id');
+	$this->db->join('categoria', 'categoria.categoria_id = subcategoria.categoria');
+	$this->db->where('articulo.articulo_id', $articulo_id);
+	
+
+	
+	$query = $this->db->get();
+	return $query->row(); 
+	}
+
+
+/*
+function datos_categoria_subcategoria_articulo($articulo_id)
+	{
+	$this->db->select('categoria.nombre as nombre_cat, subcategoria.nombre as nombre_sub, articulo.nombre as nombre_art, categoria_id, subcategoria_id, articulo_id');
+	$this->db->from('categoria');
+	$this->db->join('subcategoria', 'subcategoria.categoria = categoria.categoria_id');
+	$this->db->join('articulo', 'articulo.subcategoria = subcategoria.subcategoria_id');
+	$this->db->where('articulo.articulo_id', $articulo_id);
+	
+	$query = $this->db->get();
+	
+	print_r($query);
+	
+	return $query->result();
+	}*/
 
 }//model
 

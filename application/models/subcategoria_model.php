@@ -76,16 +76,26 @@ function articulos_subcategoria($subcategoria_id, $limit, $start){
 	return $query->result();
 	}	
 
-function datos_subcategoria($id_subcategoria)
+function datos_categoria_subcategoria($id_subcategoria)
 	{
-	$this->db->select('*');
+	$this->db->select('subcategoria.nombre as nombre_sub, categoria.nombre as nombre_cat, categoria_id, subcategoria_id');
 	$this->db->from('subcategoria');
+	$this->db->join('categoria', 'subcategoria.categoria = categoria.categoria_id');
 	$this->db->where('subcategoria.subcategoria_id', $id_subcategoria);
 	
 	$query = $this->db->get();
 	return $query->result();
 	}
 
+function obtiene_subcategorias_categoria($subcategoria_id)
+	{
+	$sql = 'SELECT subcategoria.nombre as nombre_subcat, subcategoria_id, categoria ';
+	$sql .= 'FROM subcategoria WHERE categoria IN (SELECT categoria FROM subcategoria';
+	$sql .= ' WHERE subcategoria_id='.$subcategoria_id.')';
+	
+	$query = $this->db->query($sql);
+	return $query->result();
+	}
 }//model
 
 ?>

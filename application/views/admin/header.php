@@ -143,7 +143,7 @@
                 <input type="text" placeholder="Quick search ..." />
                 <button class="glyphicons search"><i></i></button>
             </div>
-<ul>
+<ul style="display:none">
 
 <li class="heading"><span>Categorias</span></li>
 <li class="glyphicons home active"><a href="<?php echo base_url(); ?>admin/index/body"><i></i><span>Inicio</span></a></li>
@@ -253,9 +253,9 @@
     </li>
     
     
-    <li class="glyphicons sort"><a href="<?php echo base_url(); ?>admin/index/pages"><i></i><span>Paginas</span></a></li>
-    <li class="glyphicons picture"><a href="<?php echo base_url(); ?>admin/index/gallery"><i></i><span>Galerias</span></a></li>
-    <li class="glyphicons adress_book"><a href="<?php echo base_url(); ?>admin/index/bookings"><i></i><span>Archivos</span></a></li>
+    <li style="display:none" class="glyphicons sort"><a href="<?php echo base_url(); ?>admin/index/pages"><i></i><span>Paginas</span></a></li>
+    <li style="display:none" class="glyphicons picture"><a href="<?php echo base_url(); ?>admin/index/gallery"><i></i><span>Galerias</span></a></li>
+    <li style="display:none" class="glyphicons adress_book"><a href="<?php echo base_url(); ?>admin/index/bookings"><i></i><span>Archivos</span></a></li>
 </ul>
     </div>
 </div>
