@@ -92,7 +92,7 @@
     
                 <?php foreach($categoria as $cat): ?>          
                 
-                <li><a  <?php if ($cat->categoria_id == $categoria_id->categoria_id): echo 'class = "activo"'; endif; ?> href="<?php echo base_url().'inicio/categoria/'.$cat->categoria_id.'/'.$cat->nombre; ?>"><?php echo $cat->nombre;?></a>
+                <li><a  <?php if ($cat->categoria_id == $categoria_id): echo 'class = "activo"'; endif; ?> href="<?php echo base_url().'inicio/categoria/'.$cat->categoria_id.'/'.$cat->nombre; ?>"><?php echo $cat->nombre;?></a>
                     <ul style="margin-top: 3px;">
                     <?php foreach($subcategoria as $subcat): ?>
                     <?php if($cat->categoria_id == $subcat->categoria):?>

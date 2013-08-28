@@ -181,6 +181,19 @@ function alta_thumb_categoria($data, $categoria_id)	// actualiza la tabla catego
 }
 
 
+function alta_elemento_index($data, $index_id)	// actualiza la tabla categoria con el nombre de imagen
+{
+	
+	foreach($data as $row):
+	
+	$this->img = $row['file_name'];
+	$this->db->where('index_id', $index_id);
+	$this->db->update('elementos_index', $this);
+	return true;
+	
+	endforeach;
+}
+
 
 
 

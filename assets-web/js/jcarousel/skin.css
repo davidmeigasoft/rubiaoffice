@@ -272,7 +272,7 @@
  */
 .jcarousel-container .jcarousel-next-horizontal {
     position: absolute;
-    bottom: 50px;
+    bottom: 70px;
     left: 865px;
     width: 40px;
     height: 40px;
@@ -290,7 +290,7 @@
 
 .jcarousel-container .jcarousel-prev-horizontal {
     position: absolute;
-    bottom: 50px;
+    bottom: 70px;
     left: -45px;
     width: 40px;
     height: 40px;

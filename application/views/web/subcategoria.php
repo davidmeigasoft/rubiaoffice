@@ -189,12 +189,12 @@
             
             
 				<?php if($row->file_name != ""): ?>
-                	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
+                	<a href="<?php echo base_url().'inicio/articulo/'.$row->articulo_id.'/'.$row->articulo_nombre;?>">
                     <img src="<?php echo base_url().'uploads/articulo/mid/'.$row->file_name; ?>" alt="Imagen de artículo"/>
                     </a>
                 <?php else: ?>
                 
-                	<a href="<?php echo base_url().'inicio/articulo/'.$row->categoria_id.'/'.$row->subcategoria_id.'/'.$row->articulo_nombre.'/'.$row->articulo_id;?>">
+                	<a href="<?php echo base_url().'inicio/articulo/'.$row->articulo_id.'/'.$row->articulo_nombre;?>">
                     <img src="<?php echo base_url().'uploads/articulo/noimage_min.png';?>" alt="Imagen de artículo"/>
                     </a>
                 <?php endif;?>

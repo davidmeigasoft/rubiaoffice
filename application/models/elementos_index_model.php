@@ -1,59 +1,60 @@
 <?php 
 
-class Categoria_model extends CI_Model {
+class Elementos_index_model extends CI_Model {
 function __construct()
 {
 	parent::__construct();
 	$this->load->helper(array('form', 'url'));
 }
 
-function categoria($ordenacion = 'nombre')//devuelve todas las categorías
+function elementos_index()
 {
-	$this->db->order_by($ordenacion);
-	$query = $this->db->get('categoria');
+	$query = $this->db->get('elementos_index');
 	return $query->result();
 }
-
-function categoria_id($id)//devuelve todas las categorías
+	
+function alta_elemento()
 {
-	$this->db->where('categoria_id', $id);
-    $query = $this->db->get('categoria');
+	$this->nombre = $this->input->post('nombre');
+	$this->titulo = $this->input->post('titulo');
+	$this->subtitulo = $this->input->post('subtitulo');
+	$this->desc_1 = $this->input->post('desc_1');
+	$this->desc_2 = $this->input->post('desc_2');
+	$this->url = $this->input->post('url');
+	
+	$this->db->insert('elementos_index', $this);
+	return true;
+}
+
+function borra_elemento($index_id)
+{
+	$this->db->where('index_id', $index_id);
+	$this->db->delete('elementos_index');
+	return true;
+}
+
+function elemento_index_id($id)//devuelve todas las categorías
+{
+	$this->db->where('index_id', $id);
+    $query = $this->db->get('elemento_index');
     return $query->result();
 }
 
-function categoria_por_id($categoria_id){
-	$this->db->select('*');
-	$this->db->from('categoria');
-	$this->db->join('subcategoria', 'subcategoria.categoria = categoria.categoria_id');
-	$this->db->where('categoria.categoria_id', $categoria_id);
-	$query = $this->db->get();
-	return $query->result();
-	}
-	
-function alta_categoria()
-{
-	$this->nombre = $this->input->post('nombre');
-	$this->desc = $this->input->post('desc');
-	$this->db->insert('categoria', $this);
-	return true;
-}
-
-function borra_categoria($categoria_id)
-{
-	$this->db->where('categoria_id', $categoria_id);
-	$this->db->delete('categoria');
-	return true;
-}
-
-function actualiza_categoria()
+function actualiza_elemento()
 {
 	$data = array(
                'nombre' => $this->input->post('nombre'),
-               'desc' => $this->input->post('desc'),
+               'titulo' => $this->input->post('titulo'),
+			   'subtitulo' => $this->input->post('subtitulo'),
+               'desc_1' => $this->input->post('desc_1'),
+			   'desc_2' => $this->input->post('desc_2'),
+               'url' => $this->input->post('url'),
             );
+	
+	print_r($data);
 
-	$this->db->where('categoria_id', $this->input->post('categoria_id'));
-	$this->db->update('categoria', $data);
+	$this->db->where('index_id', $this->input->post('index_id'));
+	$this->db->update('elementos_index', $data);
 	return true;
 }//end actualiza categoria
 

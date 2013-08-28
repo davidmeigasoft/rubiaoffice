@@ -226,9 +226,19 @@
 <ul>
     <li class="heading"><span>Secciones</span></li>
     
+<li class="hasSubmenu">
+        <a data-toggle="collapse" class="glyphicons shopping_cart" href="#menu_elementos_index"><i></i><span>Elementos Index</span></a>
+        <ul class="collapse" id="menu_elementos_index">
+            <li class=""><a href="<?php echo base_url(); ?>admin_elementos_index"><span>Añadir elemento</span></a></li>
+            <li class=""><a href="<?php echo base_url(); ?>admin_elementos_index/listar_elementos_index"><span>Listado de elementos</span></a></li>
+        </ul>
+    </li>
+
+
+    
     <li class="hasSubmenu">
-        <a data-toggle="collapse" class="glyphicons shopping_cart" href="#menu_ecommerce"><i></i><span>Categorías</span></a>
-        <ul class="collapse" id="menu_ecommerce">
+        <a data-toggle="collapse" class="glyphicons shopping_cart" href="#menu_categoria"><i></i><span>Categorías</span></a>
+        <ul class="collapse" id="menu_categoria">
             <li class=""><a href="<?php echo base_url(); ?>admin_categoria"><span>Alta categoría</span></a></li>
             <li class=""><a href="<?php echo base_url(); ?>admin_categoria/listar_categoria"><span>Listado de categorías</span></a></li>
         </ul>

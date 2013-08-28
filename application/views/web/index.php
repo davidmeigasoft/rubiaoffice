@@ -99,59 +99,21 @@
 				
 					<div class = 'slider'>
 					
+                    <?php foreach($elemento as $row): ?>
+                    
 						<div class = 'item item1'>
-							<div class = 'inner'>							
-								<div class = 'text1'><span>Mobiliario de Oficina</span></div>
-								<div class = 'text2'><span>Sillones, mesas, estantes...</span></div>
-								<div class = 'text3'><span>Los mejores muebles.</span></div>
-                                <div class="text4"><span>Todo lo que necesita para su oficina.<br />
-								Los mejores complementos para equipar su espacio de trabajo</span></div>
-                                <div class="text5"><a href="subcategoria.php" class="get_button">Ver productos</a></div>
+							<div class = 'inner'>
+                            	<img src="<?php echo base_url().'uploads/elementos_index/'.$row->img; ?>"/>					
+								<div class = 'text1'><span><?php echo $row->titulo; ?></span></div>
+								<div class = 'text2'><span><?php echo $row->subtitulo; ?></span></div>
+								<div class = 'text3'><span><?php echo $row->desc_1; ?></span></div>
+                                <div class="text4"><span><?php echo $row->desc_2; ?></span></div>
+                                <div class="text5"><a href="<?php echo $row->url; ?>" class="get_button">Ver productos</a></div>
                                 
 							</div>
 						</div>
 						
-						<div class = 'item item2'>
-							<div class = 'inner'>							
-								<div class = 'text1'><span>Audiovisuales</span></div>
-								<div class = 'text2'><span>Pantallas, proyectores...</span></div>
-								<div class = 'text3'><span>El último y más avanzado material<br />
-                                para sus reuniones<br />
-                                Solicitenos presupuesto</span></div>
-                                <div class="text4"><span>Soporte postventa.<br />
-                                Si necesita instalación ,nosotros<br />
-                                lo hacemos por usted.<br /></span></div>
-                                <div class="text5"><a href="subcategoria.php" class="get_button">Ver productos</a></div>
-							</div>
-						</div>
-						
-						<div class = 'item item3'>
-							<div class = 'inner'>							
-								<div class = 'text1'><span>Audiovisuales</span></div>
-								<div class = 'text2'><span>Pantallas, proyectores...</span></div>
-								<div class = 'text3'><span>El último y más avanzado material<br />
-                                para sus reuniones<br />
-                                Solicitenos presupuesto</span></div>
-                                <div class="text4"><span>Soporte postventa.<br />
-                                Si necesita instalación ,nosotros<br />
-                                lo hacemos por usted.<br /></span></div>
-                                <div class="text5"><a href="subcategoria.php" class="get_button">Ver productos</a></div>
-							</div>
-						</div>
-						
-						<div class = 'item item4'>
-							<div class = 'inner'>							
-								<div class = 'text1'><span>Audiovisuales</span></div>
-								<div class = 'text2'><span>Pantallas, proyectores...</span></div>
-								<div class = 'text3'><span>El último y más avanzado material<br />
-                                para sus reuniones<br />
-                                Solicitenos presupuesto</span></div>
-                                <div class="text4"><span>Soporte postventa.<br />
-                                Si necesita instalación ,nosotros<br />
-                                lo hacemos por usted.<br /></span></div>
-                                <div class="text5"><a href="subcategoria.php" class="get_button">Ver productos</a></div>
-							</div>
-						</div>
+					<?php endforeach; ?>
 
                         
 					</div>
@@ -211,7 +173,7 @@
 
   
 <!-- style switcher -->
-<script type="text/javascript" src="js/style-switcher/styleswitcher.js"></script>
+<script type="text/javascript" src="<?php echo base_url().'assets-web/'?>js/style-switcher/styleswitcher.js"></script>
 <link rel="alternate stylesheet" type="text/css" href="<?php echo base_url().'assets-web/'; ?>css/colors/lightblue.css" title="lightblue" />
 <link rel="alternate stylesheet" type="text/css" href="<?php echo base_url().'assets-web/'; ?>css/colors/lightgreen.css" title="lightgreen" />
 <link rel="alternate stylesheet" type="text/css" href="<?php echo base_url().'assets-web/'; ?>css/colors/blue.css" title="blue" />
@@ -256,17 +218,18 @@
     
 <!-- ######### JS FILES ######### -->
 <!-- get jQuery from the google apis -->
-<script type="text/javascript" src="js/universal/jquery.js"></script>
+<script type="text/javascript" src="<?php echo base_url().'assets-web/'?>js/universal/jquery.js"></script>
 
 <!-- style switcher -->
-<script src="js/style-switcher/jquery-1.js"></script>
-<script src="js/style-switcher/styleselector.js"></script>
+<script src="<?php echo base_url().'assets-web/'?>js/style-switcher/jquery-1.js"></script>
+<script src="<?php echo base_url().'assets-web/'?>js/style-switcher/styleselector.js"></script>
 
 <!-- iosSlider plugin -->
-<script src = "js/iosslider/_src/jquery.iosslider.js"></script>
-<script src = "js/iosslider/_lib/jquery.easing-1.3.js"></script>
-<script src = "js/iosslider/_src/custom.js"></script>
+<script src = "<?php echo base_url().'assets-web/'?>js/iosslider/_src/jquery.iosslider.js"></script>
+<script src = "<?php echo base_url().'assets-web/'?>js/iosslider/_lib/jquery.easing-1.3.js"></script>
+<script src = "<?php echo base_url().'assets-web/'?>js/iosslider/_src/custom.js"></script>
 
+<script src="<?php echo base_url().'assets-web/'?>js/style-switcher/styleswitcher.js"></script>
 
 </body>
 </html>

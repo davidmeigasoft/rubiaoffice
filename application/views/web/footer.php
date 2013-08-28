@@ -239,6 +239,7 @@ Condiciones del servicio | Politica de privacidad
 <script src = "<?php echo base_url().'assets-web/'?>js/iosslider/_src/jquery.iosslider.js"></script>
 <script src = "<?php echo base_url().'assets-web/'?>js/iosslider/_lib/jquery.easing-1.3.js"></script>
 <script src = "<?php echo base_url().'assets-web/'?>js/iosslider/_src/custom.js"></script>
+<script src = "<?php echo base_url().'assets-web/'?>js/iosslider/_src/custom2.js"></script>
 
 <!-- style switcher -->
 <script src="<?php echo base_url().'assets-web/'?>js/style-switcher/jquery-1.js"></script>

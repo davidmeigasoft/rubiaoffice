@@ -325,7 +325,6 @@ public function alta_thumb_categoria($categoria_id){//utiliza uploadiftfive para
 	}//End alta_thumb
 
 
-
  public function thumb_categoria($imagen)
     {
         $config['image_library'] = 'gd2';
@@ -343,7 +342,73 @@ public function alta_thumb_categoria($categoria_id){//utiliza uploadiftfive para
     }
 	
 	
-	
+
+
+
+
+public function alta_thumb_elemento_index($index_id){//utiliza uploadiftfive para multisubidas html5
+		
+	$config['upload_path'] = './uploads/elementos_index/';
+	$config['allowed_types'] = 'gif|jpg|jpeg|png';
+	$config['max_size'] = '10000';
+	$config['max_width'] = '4000';
+	$config['max_height'] = '4000';
+	$this->load->library('upload', $config);
+
+
+			if ( ! $this->upload->do_upload())//error en subida
+			{
+				$upload_error = $this->upload->display_errors();
+            	echo json_encode($upload_error);
+			}
+			else//subida ok metemos los datos en la bd
+			{
+				$ruta = 'uploads/elementos_index';
+				$data = array('upload_data' => $this->upload->data());
+				
+				$imagen = $this->upload->data();
+				//echo $imagen;
+				
+				$this->redimensiona_elemento($imagen['file_name']);
+				
+				if ($this->thumb_model->alta_elemento_index($data, $index_id)== true){
+					echo json_encode($ruta);
+				}
+				else{
+					echo json_encode($ruta);
+				}//End if	
+
+			}	
+		
+	}//End alta_thumb
+
+
+
+ public function redimensiona_elemento($imagen)
+    {
+        $config['image_library'] = 'gd2';
+		$config['source_image']	= './uploads/elementos_index/'.$imagen;
+		$config['new_image'] = './uploads/elementos_index/';
+		//$config['create_thumb'] = TRUE;
+		$config['maintain_ratio'] = TRUE;
+		$config['width']	= 1400;
+		$config['height']	= 970;
+		
+		$this->image_lib->initialize($config);
+		
+		$this->image_lib->resize();
+		
+    }
+
+
+
+
+
+
+
+
+
+
 	
 	
 
