@@ -3,7 +3,10 @@
 <div class="page_title">
 
 	<div class="container">
-		<div class="leaft_title"><h1><?php// echo ucfirst(str_replace("%20", " ",$nombre_categoria));?></h1></div>
+		<div class="leaft_title"><h1><?php foreach($datos_categoria as $row): ?>
+        	<?php echo ucfirst($row->nombre);?>
+        <?php endforeach; ?>
+        </h1></div>
         <div class="reght_pagenation"><a href="<?php echo base_url(); ?>">Inicio</a><i>/</i> 
         
         <?php foreach($datos_categoria as $row): ?>

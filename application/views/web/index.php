@@ -102,14 +102,14 @@
                     <?php foreach($elemento as $row): ?>
                     
 						<div class = 'item item1'>
-							<div class = 'inner'>
-                            	<img src="<?php echo base_url().'uploads/elementos_index/'.$row->img; ?>"/>					
+							<div class = 'inner' style =" background-image: url(<?php echo base_url().'uploads/elementos_index/'.$row->img; ?>)";>
+    
+    					
 								<div class = 'text1'><span><?php echo $row->titulo; ?></span></div>
 								<div class = 'text2'><span><?php echo $row->subtitulo; ?></span></div>
 								<div class = 'text3'><span><?php echo $row->desc_1; ?></span></div>
                                 <div class="text4"><span><?php echo $row->desc_2; ?></span></div>
-                                <div class="text5"><a href="<?php echo $row->url; ?>" class="get_button">Ver productos</a></div>
-                                
+                                <div class="text5"><a href="<?php echo $row->url; ?>" class="get_button">Ver productos</a></div> 
 							</div>
 						</div>
 						
@@ -121,7 +121,7 @@
 				
                 <div class="container_index">
                     <div class = 'slideSelectors'>
-                        <div class="placed" style="width:400px">
+                        <div class="placed">
                         
                         <?php foreach ($categoria as $row): ?>
                         

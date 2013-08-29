@@ -134,9 +134,9 @@
 
 
 .iosSlider .slider .item1 .inner {
-	background-image: url(../../images/sliders/iosslider/1.png);
 	background-position: left top;
 	background-repeat: no-repeat;
+	width: 100%;
 }
 
 .inner img{
@@ -170,6 +170,7 @@
 	z-index: 1;
 }
 .sliderContainer .slideSelectors .placed {
+	margin-left: 180px;
 	width: 660px;
 	height: 100px;
 	position: absolute;

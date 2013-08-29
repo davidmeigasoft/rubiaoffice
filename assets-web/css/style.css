@@ -1005,14 +1005,15 @@ ul.recent_posts_list {
 	font-size: 11px;
 	line-height: 16px;
 	color: #eee;
-	background: #3f3f3f url(../images/arrow-02.png) no-repeat 10px 57px;
+	background: #3f3f3f;
+	text-align: right;
 	float: left;
 	padding: 19px 10px;
 	margin: 0px 0px 0px 13px;
 }
 
 .footer_home .contactus ul {
-	float: left;
+	float: right;
 	padding: 0px;
 	margin: 14px 0px 0px 0px;
 }
