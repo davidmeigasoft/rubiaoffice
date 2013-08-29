@@ -1,24 +1,23 @@
 <?php 
 
-class Categoria_model extends CI_Model {
+class Familia_model extends CI_Model {
 function __construct()
 {
 	parent::__construct();
 	$this->load->helper(array('form', 'url'));
 }
 
-function categoria($ordenacion = 'nombre')//devuelve todas las categorías
+function familia($ordenacion = 'nombre')//devuelve todas las categorías
 {
 	$this->db->order_by($ordenacion);
-	$query = $this->db->get('categoria');
-	
+	$query = $this->db->get('familia');
 	return $query->result();
 }
 
-function categoria_id($id)//devuelve todas las categorías
+function familia_id($id)//devuelve todas las categorías
 {
-	$this->db->where('categoria_id', $id);
-    $query = $this->db->get('categoria');
+	$this->db->where('familia_id', $id);
+    $query = $this->db->get('familia');
     return $query->result();
 }
 
@@ -31,32 +30,30 @@ function categoria_por_id($categoria_id){
 	return $query->result();
 	}
 	
-function alta_categoria()
+function alta_familia()
 {
 	$this->nombre = $this->input->post('nombre');
 	$this->desc = $this->input->post('desc');
-	$this->familia = $this->input->post('familia');
-	$this->db->insert('categoria', $this);
+	$this->db->insert('familia', $this);
 	return true;
 }
 
-function borra_categoria($categoria_id)
+function borra_familia($familia_id)
 {
-	$this->db->where('categoria_id', $categoria_id);
-	$this->db->delete('categoria');
+	$this->db->where('familia_id', $familia_id);
+	$this->db->delete('familia');
 	return true;
 }
 
-function actualiza_categoria()
+function actualiza_familia()
 {
 	$data = array(
                'nombre' => $this->input->post('nombre'),
-			   'familia' => $this->input->post('familia'),
                'desc' => $this->input->post('desc'),
             );
 
-	$this->db->where('categoria_id', $this->input->post('categoria_id'));
-	$this->db->update('categoria', $data);
+	$this->db->where('familia_id', $this->input->post('familia_id'));
+	$this->db->update('familia', $data);
 	return true;
 }//end actualiza categoria
 
@@ -64,50 +61,51 @@ function actualiza_categoria()
 	//var_dump($this->db->last_query());
 	//print_r($query);
 
-function datos_categoria($id_categoria)
+function datos_familia($id_familia)
 	{
 	$this->db->select('*');
-	$this->db->from('categoria');
-	$this->db->where('categoria.categoria_id', $id_categoria);
+	$this->db->from('familia');
+	$this->db->where('familia.familia_id', $id_familia);
 	
 	$query = $this->db->get();
 	return $query->result();
 	}
 
 
-function obtiene_categoria($categoria_id) //devuelve ID de la categoria
+function obtiene_familia($familia_id) //devuelve ID de la categoria
 	{
-	$this->db->select('categoria_id');
+	$this->db->select('familia_id');
+	$this->db->from('familia');
+	$this->db->where('familia_id', $familia_id);
+	
+	$query = $this->db->get();
+	
+	$resultado = $query->row();
+	return $resultado->familia_id; 
+	
+	
+	}
+
+function obtiene_familia_categoria($categoria_id) //devuelve ID de la categoria de una subcategoria
+	{
+	$this->db->select('familia_id');
 	$this->db->from('categoria');
+	$this->db->join('familia', 'familia.familia_id = categoria.familia');
 	$this->db->where('categoria_id', $categoria_id);
 	
 	$query = $this->db->get();
 	
 	$resultado = $query->row();
 	return $resultado->categoria_id; 
-	
-	
 	}
 
-function obtiene_categoria_subcategoria($subcategoria_id) //devuelve ID de la categoria de una subcategoria
-	{
-	$this->db->select('categoria_id');
-	$this->db->from('subcategoria');
-	$this->db->join('categoria', 'categoria.categoria_id = subcategoria.categoria');
-	$this->db->where('subcategoria_id', $subcategoria_id);
-	
-	$query = $this->db->get();
-	
-	$resultado = $query->row();
-	return $resultado->categoria_id; 
-	}
-
-function obtiene_categoria_articulo($articulo_id)  //devuelve ID de la categoria de un artículo
+function obtiene_familia_articulo($articulo_id)  //devuelve ID de la categoria de un artículo
 	{
 	$this->db->select('categoria_id');
 	$this->db->from('subcategoria');
 	$this->db->join('articulo', 'articulo.subcategoria = subcategoria.subcategoria_id');
 	$this->db->join('categoria', 'categoria.categoria_id = subcategoria.categoria');
+	$this->db->join('familia', 'familia.familia_id = categoria.familia');
 	$this->db->where('articulo.articulo_id', $articulo_id);
 	
 	$query = $this->db->get();

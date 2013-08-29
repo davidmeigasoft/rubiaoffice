@@ -1,46 +1,42 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Admin_categoria extends CI_Controller {
+class Admin_familia extends CI_Controller {
 	
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('categoria_model');
 		$this->load->model('familia_model');
+
 	} 
 	
     public function index()
     {
-		$data['familia'] = $this->familia_model->familia();
 		$this->load->view('admin/header');
-		$this->load->view('admin/formulario_categoria', $data);
+		$this->load->view('admin/formulario_familia');
 		$this->load->view('admin/footer');
     }
 
-	public function alta_categoria(){
+	public function alta_familia(){
 		
-	$this->form_validation->set_rules('nombre', 'Nombre categoria', 'required'); //forma directa de crear reglas
+	$this->form_validation->set_rules('nombre', 'Nombre familia', 'required'); //forma directa de crear reglas
 	
 	if ($this->form_validation->run() == FALSE)// hay algun error en la validacion
 		{
-			$data['familia'] = $this->familia_model->familia();
 			$this->load->view('admin/header');
-            $this->load->view('admin/formulario_categoria', $data);
+            $this->load->view('admin/formulario_familia');
             $this->load->view('admin/footer');
 		}
 	else
 		{
-		if ($this->categoria_model->alta_categoria()== true){
-			$data['familia'] = $this->familia_model->familia();
+		if ($this->familia_model->alta_familia()== true){
 			$data['error'] = "Ok, todo correcto";
             $this->load->view('admin/header');
-            $this->load->view('admin/formulario_categoria', $data);
+            $this->load->view('admin/formulario_familia', $data);
             $this->load->view('admin/footer');
 			}
 		else{
-			$data['familia'] = $this->familia_model->familia();
 			$data['error'] = "Ha ocurrido algún error con la consulta";
             $this->load->view('admin/header');
-            $this->load->view('admin/formulario_categoria', $data);
+            $this->load->view('admin/formulario_familia', $data);
             $this->load->view('admin/footer');
 		}//End if
 	}//End form validation
@@ -49,41 +45,41 @@ class Admin_categoria extends CI_Controller {
 	}//End alta_cliente
 	
 	
-	public function listar_categoria()
+	public function listar_familia()
 	{
-		$data['categoria'] = $this->categoria_model->categoria();
+		$data['familia'] = $this->familia_model->familia();
 		$this->load->view('admin/header');
-		$this->load->view('admin/tabla_categoria', $data);
+		$this->load->view('admin/tabla_familia', $data);
 		$this->load->view('admin/footer');
 	}//Cliente
 	
 	
 	
-    public function actualiza_categoria(){
+    public function actualiza_familia(){
 	
-	$this->form_validation->set_rules('nombre', 'Nombre categoria', 'required'); //forma directa de crear reglas
+	$this->form_validation->set_rules('nombre', 'Nombre familia', 'required'); //forma directa de crear reglas
 
 	if ($this->form_validation->run() == FALSE)// hay algun error en la validacion
 		{
-			$data['categoria'] = $this->categoria_model->categoria_id($this->input->post('categoria_id'));
+			$data['familia'] = $this->familia_mofel->familia_id($this->input->post('familia_id'));
 			$this->load->view('admin/header');
-            $this->load->view('admin/formulario_editar_categoria',$data);
+            $this->load->view('admin/formulario_editar_familia',$data);
             $this->load->view('admin/footer');
 		}
 	else
 		{
-		if ($this->categoria_model->actualiza_categoria()== true){//Si la modificacion es ok
+		if ($this->familia_model->actualiza_familia()== true){//Si la modificacion es ok
 			
-			$data['categoria'] = $this->categoria_model->categoria();
+			$data['familia'] = $this->familia_model->familia();
             $this->load->view('admin/header');
-            $this->load->view('admin/tabla_categoria',$data);
+            $this->load->view('admin/tabla_familia',$data);
             $this->load->view('admin/footer');
 			}
 		else{
 			$data['error'] = "Ha ocurrido algún error al intentar actualizar";//Error en modificacion
 			
             $this->load->view('admin/header');
-            $this->load->view('admin/formulario_editar_categoria', $data);
+            $this->load->view('admin/formulario_editar_familia', $data);
             $this->load->view('admin/footer');
 		}//End if
 	}//End form validation
@@ -91,19 +87,19 @@ class Admin_categoria extends CI_Controller {
 		
 	}//End actualiza cliente
 	
-    public function borra_categoria($categoria_id){
+    public function borra_familia($familia_id){
 		
-		if ($this->categoria_model->borra_categoria($categoria_id)== true){
-			$data['categoria'] = $this->categoria_model->categoria();
+		if ($this->familia_model->borra_familia($familia_id)== true){
+			$data['familia'] = $this->familia_model->familia();
             $this->load->view('admin/header');
-            $this->load->view('admin/tabla_categoria',$data);
+            $this->load->view('admin/tabla_familia',$data);
             $this->load->view('admin/footer');
 			}
 		else{
-			$data['error'] = "Ha ocurrido algún error al intentar borrar la categoría";
-			$data['categoria'] = $this->categoria_model->categoria_id($this->input->post('categoria_id'));
+			$data['error'] = "Ha ocurrido algún error al intentar borrar la familia";
+			$data['familia'] = $this->familia_model->categoria_id($this->input->post('familia_id'));
             $this->load->view('admin/header');
-            $this->load->view('admin/formulario_editar_categoria', $data);
+            $this->load->view('admin/formulario_editar_familia', $data);
             $this->load->view('admin/footer');
 		}//End if
 		
@@ -131,13 +127,11 @@ class Admin_categoria extends CI_Controller {
 		endif;
 	}//End quirtar archivos de cliente
 	
-	public function categoria_id($id)
+	public function familia_id($id)
 	{	
-		$data['categoria'] = $this->categoria_model->categoria_id($id);
-		$data['familia'] = $this->familia_model->familia();
-		
+		$data['familia'] = $this->familia_model->familia_id($id);
 		$this->load->view('admin/header');
-		$this->load->view('admin/formulario_editar_categoria', $data);
+		$this->load->view('admin/formulario_editar_familia', $data);
 		$this->load->view('admin/footer');
 
 	}//Cliente

@@ -2,9 +2,9 @@
 		<ul class="breadcrumb">
 	<li><a href="<?php echo base_url(); ?>admin" class="glyphicons home"><i></i> Admin</a></li>
 	<li class="divider"></li>
-	<li><a href="<?php echo base_url(); ?>admin_categoria/listar_categoria"> Listado de categorías</a></li>
+	<li><a href="<?php echo base_url(); ?>admin_categoria/listar_categoria"> Listado de familias</a></li>
 	<li class="divider"></li>
-	<li>Editar categoría</li>
+	<li>Editar familia</li>
 </ul>
 <div class="separator"></div>
 
@@ -18,15 +18,15 @@
 	</div>
 </div>
 <div class="innerLR">
-<?php foreach($categoria as $row): ?>
-	<form name="form" method="post" class="form-horizontal" action="<?php echo base_url().'admin_categoria/actualiza_categoria'; ?>">
+<?php foreach($familia as $row): ?>
+	<form name="form" method="post" class="form-horizontal" action="<?php echo base_url().'admin_familia/actualiza_familia'; ?>">
     
 	<div class="tab-content" style="padding: 0;">
 		<div class="tab-pane active" id="account-details">
 		
 			<div class="widget widget-2">
 				<div class="widget-head">
-					<h4 class="heading glyphicons edit"><i></i>Datos categoría</h4>
+					<h4 class="heading glyphicons edit"><i></i>Datos familia</h4>
 				</div>
 				<div class="widget-body" style="padding-bottom: 0;">
                     <!--Fila de mensaje de error-->
@@ -53,37 +53,6 @@
 								</div>
 							</div>
 							
-                            
-                            
-							<div class="control-group">
-								<label class="control-label">Familia</label>
-								<div class="controls">
-                                
-                                <select name="familia">
-                                	<option selected>Seleccione Familia
-                                   
-                                	<?php foreach($familia as $fam): ?>
-                                    
-                                   	<?php if($row->familia == $fam->familia_id): ?> 
-                                    	<option selected="<?php echo $fam->familia_id; ?>"><?php echo $fam->nombre; ?> 
-                                    <?php else: ?>
-                                	<option value="<?php echo $fam->familia_id; ?>" ><?php echo $fam->nombre;?>
-                                     <?php endif; ?>
-                                	<?php endforeach;?>
-                                </select>
-									<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Campo obligatorio"><i></i></span>
-								</div>
-							</div>
-						</div>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
 							
 						<div class="span12">
 							
@@ -95,7 +64,7 @@
 							<textarea id="mustHaveId" class="wysihtml5 span12" rows="5" name="desc"><?php echo $row->desc; ?></textarea>
 						</div>
 					</div>
-                    <input type="hidden" name="categoria_id" value="<?php echo $row->categoria_id; ?>" />
+                    <input type="hidden" name="familia_id" value="<?php echo $row->familia_id; ?>" />
 					<div class="form-actions" style="margin: 0;">
 						<button type="submit" class="btn btn-icon btn-primary glyphicons circle_ok"><i></i>Editar</button>
 						<button type="button" class="btn btn-icon btn-default glyphicons circle_remove"><i></i>Cancelar</button>
@@ -118,13 +87,13 @@
     
 	</form>
     
-    <div class="widget widget-2">
+   <?php /* <div class="widget widget-2">
         <form name="form" enctype="multipart/form-data" method="post">
 				<div class="widget-head">
 					<h4 class="heading glyphicons edit"><i></i>Subir imágenes</h4>
 				</div>
 				<div class="widget-body" style="padding-bottom: 0;">
-                    <input type="hidden" name="categoria_id" value="<?php echo $row->categoria_id; ?>" />
+                    <input type="hidden" name="categoria_id" value="<?php echo $row->familia_id; ?>" />
                     <input type="hidden" name="nombre" value="<?php echo $row->nombre; ?>" />
 					
                     
@@ -136,7 +105,7 @@
                     <br />
 				</div>
 			</div>
-		</div>
+		</div> */ ?>
 
 
 <script type="text/javascript">

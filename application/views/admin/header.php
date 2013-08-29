@@ -235,6 +235,16 @@
     </li>
 
 
+    <li class="hasSubmenu">
+        <a data-toggle="collapse" class="glyphicons shopping_cart" href="#menu_familia"><i></i><span>Familias</span></a>
+        <ul class="collapse" id="menu_familia">
+            <li class=""><a href="<?php echo base_url(); ?>admin_familia"><span>Alta familia</span></a></li>
+            <li class=""><a href="<?php echo base_url(); ?>admin_familia/listar_familia"><span>Listado de familias</span></a></li>
+        </ul>
+    </li>
+
+
+
     
     <li class="hasSubmenu">
         <a data-toggle="collapse" class="glyphicons shopping_cart" href="#menu_categoria"><i></i><span>Categorías</span></a>

@@ -72,15 +72,55 @@
 
 <body>
 
+
+
 <div class="site_wrapper">
 
 	<div class="container">
     
     	<div class="top_section">
-              
+        
+           <div class="buscar">
+           		<form><input type="text" class="buscador"/></form>
+                <div id="icono_lupa">
+                <img src="..\..\..\assets-web\images\elements\search.png"/>
+                </div>
+           </div>
+           
             <div class="logo_innerpage"><a href="<?php echo base_url(); ?>" class="logo_innerpage"><h1>Gal<i>i</i>office</h1></a>
              <small id="subtitulo">Mobiliario de oficina</small>   
             </div><!-- end logo -->
+           
+           <style type="text/css">
+           .buscar
+		   	{
+			width: 150px;
+			height: 30px;
+			/*background-color: blue;*/
+			position: absolute;
+			left: 800px;
+			top: 15px;
+			}
+			
+			.buscador
+			{
+			width: 115px;
+			float: left;
+			}
+			
+			.buscar #icono_lupa
+			{
+			width: 30px;
+			height: 30px;
+			/*background-color: green;*/
+			float: right;
+			background-image: url(..\..\..\assets-web\images\elements\search.png) no-repeat;
+			}
+
+           </style>
+           
+
+           
            
         <nav id="access" class="access" role="navigation">
         <div id="menu" class="menu">
@@ -90,7 +130,41 @@
                 <li><a <?php if($this->uri->segment(2)=='home'): echo 'class = "activo"'; endif;?> href="<?php echo base_url().'inicio/home'; ?>">Empresa</a></li>  
 
     
-                <?php foreach($categoria as $cat): ?>          
+    			
+    			<?php foreach($familia as $fam):?>
+                
+                <li><a href=""><?php echo $fam->nombre;?></a>
+                    <ul style="margin-top: 3px;">
+                    
+                    <?php foreach($categoria as $cat): ?>
+                    
+                    	<?php if($cat->familia == $fam->familia_id): ?>
+                        <li><a href="<?php echo base_url().'inicio/categoria/'.$cat->categoria_id.'/'.$cat->nombre; ?>"><?php echo $cat->nombre; ?></a>
+                        
+							<ul style="margin-top: 0px;">
+                            	<?php foreach($subcategoria as $sub): ?>
+                            	<?php if($sub->categoria == $cat->categoria_id): ?>
+                                <li><a href="<?php echo base_url().'inicio/subcategoria/'.$sub->subcategoria_id.'/'.$sub->nombre; ?>"><?php echo $sub->nombre; ?></a>
+                                </li>
+                                <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        
+                        </li>
+                    	<?php endif; ?>
+                    
+                    <?php endforeach; ?>                    
+                    
+                   	</ul>
+                </li>	
+                
+                <?php endforeach; ?>
+    
+    
+    
+    
+    
+                <?php /*?><?php foreach($categoria as $cat): ?>          
                 
                 <li><a  <?php if ($cat->categoria_id == $categoria_id): echo 'class = "activo"'; endif; ?> href="<?php echo base_url().'inicio/categoria/'.$cat->categoria_id.'/'.$cat->nombre; ?>"><?php echo $cat->nombre;?></a>
                     <ul style="margin-top: 3px;">
@@ -99,9 +173,9 @@
                         <li><a href="<?php echo base_url().'inicio/subcategoria/'.$subcat->subcategoria_id.'/'.$subcat->nombre; ?>"><?php echo $subcat->nombre; ?></a>
                     <?php endif; ?>
                     <?php endforeach; ?>
-                    </ul>
+                   	</ul>
                   
-                 <?php endforeach; ?>
+                 <?php endforeach; ?><?php */?>
     
     
                 <li><a <?php if($this->uri->segment(2)=='contacto'): echo 'class = "activo"'; endif;?> href="<?php echo base_url().'inicio/contacto'; ?>">Contacto</a></li>

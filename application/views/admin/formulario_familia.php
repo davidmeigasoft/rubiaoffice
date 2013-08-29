@@ -2,7 +2,7 @@
 		<ul class="breadcrumb">
 	<li><a href="<?php echo base_url(); ?>admin" class="glyphicons home"><i></i> Admin</a></li>
 	<li class="divider"></li>
-	<li>Alta categoría</li>
+	<li>Alta familia</li>
 </ul>
 <div class="separator"></div>
 
@@ -11,19 +11,19 @@
 <div class="widget widget-2 widget-tabs widget-tabs-2 tabs-right border-bottom-none">
 	<div class="widget-head">
 		<ul>
-			<li class="active"><a class="glyphicons user" href="#account-details" data-toggle="tab"><i></i>Detalles de la categoría</a></li>
+			<li class="active"><a class="glyphicons user" href="#account-details" data-toggle="tab"><i></i>Detalles de la familia</a></li>
 		</ul>
 	</div>
 </div>
 
 <div class="innerLR">
-	<form name="form" method="post" class="form-horizontal" action="<?php echo base_url().'admin_categoria/alta_categoria'; ?>">
+	<form name="form" method="post" class="form-horizontal" action="<?php echo base_url().'admin_familia/alta_familia'; ?>">
 	<div class="tab-content" style="padding: 0;">
 		<div class="tab-pane active" id="account-details">
 		
 			<div class="widget widget-2">
 				<div class="widget-head">
-					<h4 class="heading glyphicons edit"><i></i>Datos de categoría</h4>
+					<h4 class="heading glyphicons edit"><i></i>Datos de familia</h4>
 				</div>
 				<div class="widget-body" style="padding-bottom: 0;">
                     <!--Fila de mensaje de error-->
@@ -48,27 +48,7 @@
 									<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Campo obligatorio"><i></i></span>
 								</div>
 							</div>
-						
-                        
-                        
-                        
-							<div class="control-group">
-								<label class="control-label">Familia</label>
-								<div class="controls">
-                                
-                                <select name="familia">
-                                	<option selected>Seleccione Familia
-                                   
-                                	<?php foreach($familia as $row): ?>
-                                	<option value="<?php echo $row->familia_id; ?>" ><?php echo $row->nombre; ?>
-                                	<?php endforeach;?>
-                                </select>
-									<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Campo obligatorio"><i></i></span>
-								</div>
-							</div>
-						</div><!--end span 6-->   
-                        
-                        
+						</div><!--end span 6-->
                         
 						<div class="span6">
 						</div><!--end span 6-->

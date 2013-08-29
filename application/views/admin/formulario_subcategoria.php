@@ -2,7 +2,7 @@
 		<ul class="breadcrumb">
 	<li><a href="<?php echo base_url(); ?>admin" class="glyphicons home"><i></i> Admin</a></li>
 	<li class="divider"></li>
-	<li>Alta categoría</li>
+	<li>Alta subcategoria</li>
 </ul>
 <div class="separator"></div>
 
