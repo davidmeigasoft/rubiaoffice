@@ -23,7 +23,9 @@
             
            
             <h3>Dónde estamos</h3>
-				<iframe class="google-map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/maps?q=42.851256,-8.583695&amp;num=1&amp;ie=UTF8&amp;t=m&amp;z=14&amp;ll=42.850963,-8.583728&amp;output=embed"></iframe><br /><small><a href="http://maps.google.es/maps?q=42.851256,-8.583695&amp;num=1&amp;ie=UTF8&amp;t=m&amp;z=14&amp;ll=42.850963,-8.583728&amp;source=embed" style="color:#0000FF;text-align:left"></a></small>
+<iframe class="google-map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.es/maps?q=42.851256,-8.583695&amp;num=1&amp;ie=UTF8&amp;t=m&amp;z=14&amp;ll=42.850963,-8.583728&amp;output=embed"></iframe><br />
+                
+                <small><a href="http://maps.google.es/maps?q=42.851256,-8.583695&amp;num=1&amp;ie=UTF8&amp;t=m&amp;z=14&amp;ll=42.850963,-8.583728&amp;source=embed" style="color:#0000FF;text-align:left"></a></small>
             
             </div><!-- end google map -->
             
