@@ -161,8 +161,5 @@ class Admin_articulo extends CI_Controller {
 		endforeach;
 		
 	}
-		
-		
-
-
+	
 } 

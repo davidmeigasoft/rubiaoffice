@@ -11,7 +11,7 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
     
-    <!-- Favicon --> 
+    <!-- Favicon -->
 	<link rel="shortcut icon" href="<?php echo base_url().'assets-web/'; ?>images/favicon.ico">
     
     <!-- this styles only adds some repairs on idevices  -->
@@ -81,43 +81,24 @@
     	<div class="top_section">
         
            <div class="buscar">
-           		<form><input type="text" class="buscador"/></form>
+           		<form name="form" method="post" action="<?php echo base_url().'inicio/buscador_articulos/' ?>">
+                
+                <input type="text" class="buscador" name="buscador"  id="buscador" placeholder=" Buscar"/>
                 <div id="icono_lupa">
-                <img src="..\..\..\assets-web\images\elements\search.png"/>
+                
+                
+                <input type="image" class="buscador" src="<?php echo base_url();?>assets-web\images\elements\search.png"/>
+                
+                <?php /*?><img src="<?php echo base_url();?>assets-web\images\elements\search.png"/><?php */?>
+                
+                </form>
                 </div>
            </div>
            
             <div class="logo_innerpage"><a href="<?php echo base_url(); ?>" class="logo_innerpage"><h1>Gal<i>i</i>office</h1></a>
              <small id="subtitulo">Mobiliario de oficina</small>   
             </div><!-- end logo -->
-           
-           <style type="text/css">
-           .buscar
-		   	{
-			width: 150px;
-			height: 30px;
-			/*background-color: blue;*/
-			position: absolute;
-			left: 800px;
-			top: 15px;
-			}
-			
-			.buscador
-			{
-			width: 115px;
-			float: left;
-			}
-			
-			.buscar #icono_lupa
-			{
-			width: 30px;
-			height: 30px;
-			/*background-color: green;*/
-			float: right;
-			background-image: url(..\..\..\assets-web\images\elements\search.png) no-repeat;
-			}
 
-           </style>
            
 
            

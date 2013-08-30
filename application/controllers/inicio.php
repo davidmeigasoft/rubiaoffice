@@ -289,6 +289,25 @@ class Inicio extends CI_Controller {
 		$this->load->view('web/subcategoria',$data);
 		$this->load->view('web/footer', $data);
 		}
+		
+		
+	public function buscador_articulos()
+		{
+		$data['familia'] = $this->familia_model->familia();
+		$data['categoria'] = $this->categoria_model->categoria();
+		$data['subcategoria'] = $this->subcategoria_model->subcategoria();
+		//$data['categoria_id'] = $this->categoria_model->obtiene_categoria_subcategoria($subcategoria_id);
+		$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
+
+		$data['cadena_buscada'] =  $this->input->post('buscador');
+		$data['resultados_busqueda'] = $this->articulo_model->buscador($this->input->post('buscador'));
+		$data['numero_resultados'] = $this->articulo_model->contador_resultados($this->input->post('buscador'));
+		
+		$this->load->view('web/header', $data);
+		$this->load->view('web/resultados_busqueda', $data);
+		$this->load->view('web/footer', $data);
+		}
+		
 	
 }//Inicio
 
