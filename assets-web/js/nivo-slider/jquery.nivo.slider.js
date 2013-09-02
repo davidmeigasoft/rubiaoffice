@@ -635,11 +635,11 @@
     
     //Default settings
     $.fn.nivoSlider.defaults = {
-        effect: 'boxRain',
+        effect: 'fade',
         slices: 15,
         boxCols: 8,
         boxRows: 4,
-        animSpeed: 750,
+        animSpeed: 250,
         pauseTime: 2000,
         startSlide: 0,
         directionNav: false,
