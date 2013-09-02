@@ -54,12 +54,9 @@
                    <div class="slider-wrapper theme-default">
                    <div id="slider" class="nivoSlider">
                      <?php foreach($articulo_imagen as $row): ?>
-                        
-                    		
-                       			<img src="<?php echo base_url().'uploads/articulo/large/'.$row->file_name; ?>" data-thumb="<?php echo base_url().'uploads/articulo/small/'.$row->file_name; ?>" alt="Imagen del producto" data-transition="slideInLeft" /> 
+
+                     	<img src="<?php echo base_url().'uploads/articulo/large/'.$row->file_name; ?>" data-thumb="<?php echo base_url().'uploads/articulo/small/'.$row->file_name; ?>" alt="Imagen del producto" data-transition="slideInLeft" /> 
                             
-                   		
-						
                     <?php endforeach;?> </div></div>
                 <?php endif; ?>    
                     

@@ -15,18 +15,13 @@ class Inicio extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->library('javascript');
 		$this->load->library('email');
-		$this->load->library('pagination');
 		
-		$this->load->model('cliente_model');
-		$this->load->model('archivo_model');
-		$this->load->model('galeria_model');
-		$this->load->model('thumb_model');
-		$this->load->model('blog_model');
 		$this->load->model('familia_model');
 		$this->load->model('categoria_model');
 		$this->load->model('subcategoria_model');
 		$this->load->model('articulo_model');
 		$this->load->model('index_model');
+		$this->load->model('thumb_model');
 		
 		$this->load->library('session');
 	    } 
@@ -276,7 +271,6 @@ public function familia($familia_id, $nombre){
 	public function ordenar_articulos_familia($familia_id)
 		{
 		$data['familia_id'] = $this->familia_model->obtiene_familia($familia_id);
-		
 		$data['menu_familia_cat'] = $this->familia_model->categorias_familia($familia_id);
 		$data['menu_familia_sub'] = $this->familia_model->subcategorias_familia($familia_id);
 		
@@ -345,7 +339,7 @@ public function familia($familia_id, $nombre){
 		$data['familia'] = $this->familia_model->familia();
 		$data['categoria'] = $this->categoria_model->categoria();
 		$data['subcategoria'] = $this->subcategoria_model->subcategoria();
-		//$data['categoria_id'] = $this->categoria_model->obtiene_categoria_subcategoria($subcategoria_id);
+		$data['familia_id'] = "buscador";
 		$data['ultimos_articulos'] = $this->articulo_model->ultimos_articulos();
 
 		$data['cadena_buscada'] =  $this->input->post('buscador');

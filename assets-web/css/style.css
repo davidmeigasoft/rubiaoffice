@@ -1546,8 +1546,8 @@ ul.socials_home_links {
 	margin: 0 auto;
 	width: 67%;
 	background-color: #fff;
-	border: 1px solid #eee;
-	border-bottom: 5px solid #eee;
+	/*border: 1px solid #eee;
+	border-bottom: 5px solid #eee;*/
 	text-align: center;
 }
 .error_pagenotfound strong {

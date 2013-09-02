@@ -39,7 +39,7 @@
 */
 //$route['inicio/listar_categoria/(:num)/(:num)'] = 'inicio/listado_de_cet/$1';
 $route['default_controller'] = 'inicio';
-$route['404_override'] = '';
+$route['404_override'] = 'errors/error_404';
 $route['(:num)/(:any)'] = 'inicio/articulo/$1/$2';
 
 //$route['listado'] = 'inicio/articulo/13/28/DS6K 20M/31';

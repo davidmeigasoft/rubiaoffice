@@ -350,11 +350,12 @@ function articulos_categoria_orden($categoria_id, $orden)
 
 	function buscador($buscado)
 		{
-		$this->db->select('articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name, articulo.precio, articulo.marca, url, subcategoria.nombre, subcategoria.desc, categoria.nombre, categoria.desc');
+		$this->db->select('articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name, articulo.precio, articulo.marca, url, subcategoria.nombre, subcategoria.desc, categoria.nombre, categoria.desc, familia.nombre, familia.desc');
 		$this->db->from('articulo');
 		$this->db->join('imagen_articulo', 'imagen_articulo.articulo = articulo.articulo_id');
 		$this->db->join('subcategoria', 'articulo.subcategoria = subcategoria.subcategoria_id');
 		$this->db->join('categoria', 'subcategoria.categoria = categoria.categoria_id');
+		$this->db->join('familia', 'categoria.familia = familia.familia_id');		
 		$this->db->like('articulo.nombre', $buscado);
 		$this->db->or_like('articulo.desc', $buscado);
 		$this->db->or_like('articulo.marca', $buscado);
@@ -362,6 +363,8 @@ function articulos_categoria_orden($categoria_id, $orden)
 		$this->db->or_like('subcategoria.desc', $buscado);
 		$this->db->or_like('categoria.nombre', $buscado);
 		$this->db->or_like('categoria.desc', $buscado);
+		$this->db->or_like('familia.nombre', $buscado);
+		$this->db->or_like('familia.desc', $buscado);
 
 		$this->db->group_by('articulo_id');
 		
@@ -371,10 +374,11 @@ function articulos_categoria_orden($categoria_id, $orden)
 	
 	function contador_resultados($buscado)
 		{
-		$this->db->select('articulo_id, articulo.nombre, articulo.desc, articulo.marca, subcategoria.nombre, subcategoria.desc, categoria.nombre, categoria.desc');
+		$this->db->select('articulo_id, articulo.nombre, articulo.desc, articulo.marca, subcategoria.nombre, subcategoria.desc, categoria.nombre, categoria.desc, familia.nombre, familia.desc');
 		$this->db->from('articulo');
 		$this->db->join('subcategoria', 'articulo.subcategoria = subcategoria.subcategoria_id');
 		$this->db->join('categoria', 'subcategoria.categoria = categoria.categoria_id');
+		$this->db->join('familia', 'categoria.familia = familia.familia_id');			
 		$this->db->like('articulo.nombre', $buscado);
 		$this->db->or_like('articulo.desc', $buscado);
 		$this->db->or_like('articulo.marca', $buscado);
@@ -382,6 +386,8 @@ function articulos_categoria_orden($categoria_id, $orden)
 		$this->db->or_like('subcategoria.desc', $buscado);
 		$this->db->or_like('categoria.nombre', $buscado);
 		$this->db->or_like('categoria.desc', $buscado);
+		$this->db->or_like('familia.nombre', $buscado);
+		$this->db->or_like('familia.desc', $buscado);
 
 		$query = $this->db->count_all_results();
 		return $query;

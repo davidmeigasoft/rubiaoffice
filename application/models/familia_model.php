@@ -118,13 +118,11 @@ function obtiene_familia_articulo($articulo_id)  //devuelve ID de la categoria d
 	{
 	$this->db->select('familia_id');
 	$this->db->from('familia');
-	$this->db->join('subcategoria', 'articulo.subcategoria = subcategoria.subcategoria_id');
-	$this->db->join('categoria', 'categoria.categoria_id = subcategoria.categoria');
-	$this->db->join('familia', 'familia.familia_id = categoria.familia');
+	$this->db->join('categoria', 'categoria.familia = familia.familia_id');
+	$this->db->join('subcategoria', 'categoria.categoria_id = subcategoria.categoria');
+	$this->db->join('articulo', 'subcategoria.subcategoria_id = articulo.subcategoria');
 	$this->db->where('articulo.articulo_id', $articulo_id);
-	
 	$query = $this->db->get();
-	
 	$resultado = $query->row();
 	return $resultado->familia_id; 
 	}
