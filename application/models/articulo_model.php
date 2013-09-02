@@ -198,7 +198,26 @@ function ultimos_articulos()
 		return $query->result();
 	}
 	
-	
+
+
+function articulos_familia($familia_id)
+	{
+		$this->db->select('categoria_id, subcategoria_id, articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name, articulo.precio, url');
+		$this->db->from('articulo');
+		$this->db->join('imagen_articulo', 'articulo.articulo_id = imagen_articulo.articulo', 'left');
+		$this->db->join('subcategoria', 'articulo.subcategoria = subcategoria.subcategoria_id', 'left');
+		$this->db->join('categoria', 'categoria.categoria_id = subcategoria.categoria', 'left');
+		$this->db->join('familia', 'familia.familia_id = categoria.familia', 'left');
+		$this->db->group_by('articulo_id');
+		$this->db->where('familia_id', $familia_id);
+		$query = $this->db->get();
+		
+		return $query->result();
+	}
+
+
+
+
 function articulos_categoria($categoria_id)
 	{
 		$this->db->select('categoria_id, subcategoria_id, articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name, articulo.precio, url');
@@ -213,7 +232,47 @@ function articulos_categoria($categoria_id)
 		return $query->result();
 	}
 	
-	
+
+
+function articulos_familia_orden($familia_id, $orden)
+	{
+		$this->db->select('categoria_id, subcategoria_id, articulo_id, articulo.nombre as articulo_nombre, articulo.desc as articulo_desc, file_name, articulo.precio, fecha_alta, url');
+		$this->db->from('familia');
+		$this->db->join('categoria', 'categoria.familia = familia.familia_id', 'left');
+		$this->db->join('subcategoria', 'subcategoria.categoria = categoria.categoria_id', 'left');
+		$this->db->join('articulo', 'articulo.subcategoria = subcategoria.subcategoria_id', 'left');
+		$this->db->join('imagen_articulo', 'articulo.articulo_id = imagen_articulo.articulo', 'left');
+		$this->db->group_by('articulo_id');
+		$this->db->where('familia_id', $familia_id);
+		
+		switch($orden){
+			case "az":
+				$this->db->order_by("articulo.nombre");
+			break;
+			
+			case "za":
+				$this->db->order_by("articulo.nombre", "desc");
+			break;
+			
+			case "caros":
+				$this->db->order_by("precio", "desc");
+			break;
+			
+			case "baratos":
+				$this->db->order_by("precio");
+			break;
+			
+			case "recientes":
+				$this->db->order_by("fecha_alta", "desc");
+			break;
+		}
+		
+		$query = $this->db->get();
+		
+		return $query->result();
+	}
+
+
 	
 function articulos_categoria_orden($categoria_id, $orden)
 	{

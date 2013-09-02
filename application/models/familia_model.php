@@ -89,21 +89,36 @@ function obtiene_familia($familia_id) //devuelve ID de la categoria
 function obtiene_familia_categoria($categoria_id) //devuelve ID de la categoria de una subcategoria
 	{
 	$this->db->select('familia_id');
-	$this->db->from('categoria');
-	$this->db->join('familia', 'familia.familia_id = categoria.familia');
+	$this->db->from('familia');
+	$this->db->join('categoria', 'familia.familia_id = categoria.familia');
 	$this->db->where('categoria_id', $categoria_id);
 	
 	$query = $this->db->get();
 	
 	$resultado = $query->row();
-	return $resultado->categoria_id; 
+	return $resultado->familia_id; 
+	}
+	
+
+function obtiene_familia_subcategoria($subcategoria_id) //devuelve ID de la categoria de una subcategoria
+	{
+	$this->db->select('familia_id');
+	$this->db->from('familia');
+	$this->db->join('categoria', 'familia.familia_id = categoria.familia');
+	$this->db->join('subcategoria', 'subcategoria.categoria = categoria.categoria_id');
+	$this->db->where('subcategoria_id', $subcategoria_id);
+	
+	$query = $this->db->get();
+	
+	$resultado = $query->row();
+	return $resultado->familia_id; 
 	}
 
 function obtiene_familia_articulo($articulo_id)  //devuelve ID de la categoria de un artículo
 	{
-	$this->db->select('categoria_id');
-	$this->db->from('subcategoria');
-	$this->db->join('articulo', 'articulo.subcategoria = subcategoria.subcategoria_id');
+	$this->db->select('familia_id');
+	$this->db->from('familia');
+	$this->db->join('subcategoria', 'articulo.subcategoria = subcategoria.subcategoria_id');
 	$this->db->join('categoria', 'categoria.categoria_id = subcategoria.categoria');
 	$this->db->join('familia', 'familia.familia_id = categoria.familia');
 	$this->db->where('articulo.articulo_id', $articulo_id);
@@ -111,8 +126,35 @@ function obtiene_familia_articulo($articulo_id)  //devuelve ID de la categoria d
 	$query = $this->db->get();
 	
 	$resultado = $query->row();
-	return $resultado->categoria_id; 
+	return $resultado->familia_id; 
 	}
+
+	
+function categorias_familia($familia_id)
+	{
+	$this->db->select('categoria_id, categoria.nombre as cat_nombre');
+	$this->db->from('familia');
+	$this->db->join('categoria', 'categoria.familia = familia.familia_id');
+	$this->db->where('familia_id', $familia_id);
+	
+	$query = $this->db->get();
+	return $query->result();
+	}
+	
+function subcategorias_familia($familia_id)
+	{
+	$this->db->select('categoria_id, subcategoria_id, subcategoria.nombre as sub_nombre');
+	$this->db->from('familia');
+	$this->db->join('categoria', 'categoria.familia = familia.familia_id');
+	$this->db->join('subcategoria', 'subcategoria.categoria = categoria.categoria_id');
+	$this->db->where('familia_id', $familia_id);
+	
+	$query = $this->db->get();
+	return $query->result();
+	}
+
+
+
 
 
 /*

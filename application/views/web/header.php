@@ -110,11 +110,9 @@
                  
                 <li><a <?php if($this->uri->segment(2)=='home'): echo 'class = "activo"'; endif;?> href="<?php echo base_url().'inicio/home'; ?>">Empresa</a></li>  
 
-    
-    			
     			<?php foreach($familia as $fam):?>
                 
-                <li><a href=""><?php echo $fam->nombre;?></a>
+                <li><a <?php if ($fam->familia_id == $familia_id): echo 'class = "activo"'; endif; ?> href="<?php echo base_url().'inicio/familia/'.$fam->familia_id.'/'.$fam->nombre; ?>"><?php echo $fam->nombre;?></a>
                     <ul style="margin-top: 3px;">
                     
                     <?php foreach($categoria as $cat): ?>
